@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".root.differentiation.ChainRule.ChainRuleFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Chain Rule"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Consider the function
+(
+sin
+(
+x
+)
+)
+2
+. Starting from
+x
+, and working towards
+(
+s
+i
+n
+x
+)
+2
+, it is necessary to do two things to the variable.
+Take the sine of the input to find
+sin
+(
+x
+)
+.
+Square the result to reach
+(
+sin
+(
+x
+)
+)
+2
+.
+It should be noted that sometimes
+(
+sin
+x
+)
+2
+ will be written in the form
+sin
+2
+x
+. They mean exactly the same thing, and are just different ways of writing down the same function.
+This is an example of a function of a function, or sometimes called a composite function. To differentiate functions of a function we use the chain rule. The chain rule states that for some function of a function, i.e.
+y
+=
+f
+(
+g
+(
+x
+)
+)
+ then by setting
+u
+=
+g
+(
+x
+)
+ we can find its derivative via,
+y
+=
+f
+(
+g
+(
+x
+)
+)
+then
+d
+y
+d
+x
+=
+d
+y
+d
+u
+×
+d
+u
+d
+x
+
+It may be easier to see via some examples."
+        android:translationY="50dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Example"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:translationY="275dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Given that
+f
+(
+x
+)
+=
+sin
+2
+x
+=
+(
+sin
+(
+x
+)
+)
+2
+, calculate it's derivative.
+Solution
+Here
+g
+(
+x
+)
+=
+sin
+(
+x
+)
+ which is what we will define as the function
+u
+, i.e.
+u
+=
+sin
+(
+x
+)
+. We can therefore write
+y
+=
+u
+2
+.
+The chain rule requires us to calculate both
+d
+y
+d
+u
+=
+2
+u
+ and
+d
+u
+d
+x
+=
+cos
+(
+x
+)
+. We can therefore find:
+."
+        android:translationY="320dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="-130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Button
+        android:id="@+id/vidButtonsChainRule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="632dp"
+        android:text="Videos"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/playButtonChainRule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="632dp"
+        android:text="quiz"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

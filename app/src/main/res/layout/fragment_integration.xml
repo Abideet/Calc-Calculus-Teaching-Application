@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".root.integration.IntegrationFragment">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/integration_title"
+        android:layout_gravity="center"
+        android:translationY="-300dp"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textSize="50sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:translationX="20dp"
+        android:translationY="60dp">
+
+        <Button
+            android:id="@+id/introduction_to_integration"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/introduction_to_integration"
+            android:textAllCaps="false"
+            android:translationY="60dp" />
+
+        <Button
+            android:id="@+id/integration_by_substitution"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/integration_by_substitution"
+            android:textAllCaps="false"
+            android:translationY="120dp" />
+
+        <Button
+            android:id="@+id/integration_by_parts"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/integration_by_parts"
+            android:textAllCaps="false"
+            android:translationY="180dp" />
+
+        <Button
+            android:id="@+id/integration_with_partial_fractions"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/integration_with_partial_fractions"
+            android:textAllCaps="false"
+            android:translationY="240dp" />
+
+        <Button
+            android:id="@+id/integration_for_areas_and_volumes"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/integration_for_areas_and_volumes"
+            android:textAllCaps="false"
+            android:translationY="300dp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

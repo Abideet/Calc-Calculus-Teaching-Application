@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".root.integration.IntegrationByParts.IntegrationByPartsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Integration by Parts"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="50dp"
+        android:text="If we want to integrate a product of two functions of some variable
+x
+, we can use the following formula:"
+        />
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationParts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="90dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="120dp"
+        android:text="This process is called integration by parts and involves first identifying which of the two functions should be in place of
+u
+(
+x
+)
+ or
+d
+v
+(
+x
+)
+/
+d
+x
+ in the above formula.
+\n
+\n Example \n Evaluate the integral"
+        />
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationParts2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="230dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Solution: Let's  first  evaluate the indefinite integral:  "
+        android:translationY="270dp"/>
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationParts3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="290dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Notice that the integrand is a product of two functions of
+x
+:
+x
+ and
+e
+x
+. So let's use integration by parts. We first need to choose which of these two functions should be
+u
+(
+x
+)
+ and
+d
+v
+(
+x
+)
+/
+d
+x
+ in the formula. Observe that, if we choose "
+        android:translationY="320dp"/>
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationParts4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="390dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Then  "
+        android:translationY="420dp"/>
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationParts5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="440dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Now we can substitute what we've got into the integration by parts formula: "
+        android:translationY="470dp"/>
+
+    <com.agog.mathdisplay.MTMathView
+    android:id="@+id/integrationParts6"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="72dp"
+    android:gravity="center"
+    android:translationY="510dp"
+    tools:layout_editor_absoluteX="-16dp" />
+
+
+    <Button
+        android:id="@+id/vidButtonsIntByParts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="632dp"
+        android:text="Videos"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</FrameLayout>

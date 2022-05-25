@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uk.aston.calculusldc.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_differentiationFragment"
+            app:destination="@id/differentiationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_integrationFragment"
+            app:destination="@id/integrationFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/differentiationFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.DifferentiationFragment"
+        android:label="fragment_differentiation_list"
+        tools:layout="@layout/fragment_differentiation" >
+        <action
+            android:id="@+id/action_differentiationFragment_to_introToDifferentiationFragment"
+            app:destination="@id/introToDifferentiationFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_variousFunctionsDifFragment"
+            app:destination="@id/variousFunctionsDifFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_secondDerivFragment"
+            app:destination="@id/secondDerivFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_statPointsFragment"
+            app:destination="@id/statPointsFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_chainRuleFragment"
+            app:destination="@id/chainRuleFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_productRuleFragment"
+            app:destination="@id/productRuleFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_quotientRuleFragment"
+            app:destination="@id/quotientRuleFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_implicitDiffFragment"
+            app:destination="@id/implicitDiffFragment" />
+        <action
+            android:id="@+id/action_differentiationFragment_to_partialDiffFragment"
+            app:destination="@id/partialDiffFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"/>
+    <fragment
+        android:id="@+id/introToDifferentiationFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.IntroToDifferentiationFragment"
+        android:label="fragment_intro_to_differentiation"
+        tools:layout="@layout/fragment_intro_to_differentiation" />
+    <fragment
+        android:id="@+id/variousFunctionsDifFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff.VariousFunctionsDifFragment"
+        android:label="fragment_various_functions_dif"
+        tools:layout="@layout/fragment_various_functions_dif" />
+    <fragment
+        android:id="@+id/secondDerivFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.SecondDeriv.SecondDerivFragment"
+        android:label="fragment_second_deriv"
+        tools:layout="@layout/fragment_second_deriv" />
+    <fragment
+        android:id="@+id/statPointsFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.StatPointsFragment.StatPointsFragment"
+        android:label="fragment_stat_points"
+        tools:layout="@layout/fragment_stat_points" />
+    <fragment
+        android:id="@+id/chainRuleFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleFragment"
+        android:label="fragment_chain_rule"
+        tools:layout="@layout/fragment_chain_rule" >
+
+        <action
+            android:id="@+id/action_chainRuleFragment_to_chainRuleVidActivity"
+            app:destination="@id/chainRuleVidActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/productRuleFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.ProductRule.ProductRuleFragment"
+        android:label="fragment_product_rule"
+        tools:layout="@layout/fragment_product_rule" />
+    <fragment
+        android:id="@+id/quotientRuleFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.QuotientRule.QuotientRuleFragment"
+        android:label="fragment_quotient_rule"
+        tools:layout="@layout/fragment_quotient_rule" />
+    <fragment
+        android:id="@+id/implicitDiffFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.ImplicitDiff.ImplicitDiffFragment"
+        android:label="fragment_implicit_diff"
+        tools:layout="@layout/fragment_implicit_diff" />
+    <fragment
+        android:id="@+id/partialDiffFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.PartialDiff.PartialDiffFragment"
+        android:label="fragment_partial_diff"
+        tools:layout="@layout/fragment_partial_diff" />
+
+    <fragment
+        android:id="@+id/integrationFragment"
+        android:name="uk.aston.calculusldc.root.integration.IntegrationFragment"
+        android:label="fragment_integration"
+        tools:layout="@layout/fragment_integration" >
+        <action
+            android:id="@+id/action_integrationFragment_to_introToIntegrationFragment"
+            app:destination="@id/introToIntegrationFragment" />
+        <action
+            android:id="@+id/action_integrationFragment_to_intregrationBySubstitutionFragment"
+            app:destination="@id/intregrationBySubstitutionFragment" />
+        <action
+            android:id="@+id/action_integrationFragment_to_integrationByPartsFragment"
+            app:destination="@id/integrationByPartsFragment" />
+        <action
+            android:id="@+id/action_integrationFragment_to_integrationByPartialFracFragment"
+            app:destination="@id/integrationByPartialFracFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/introToIntegrationFragment"
+        android:name="uk.aston.calculusldc.root.integration.IntroToIntegration.IntroToIntegrationFragment"
+        android:label="IntroToIntegrationFragment" />
+    <fragment
+        android:id="@+id/intregrationBySubstitutionFragment"
+        android:name="uk.aston.calculusldc.root.integration.IntegrationBySubstitution.IntregrationBySubstitutionFragment"
+        android:label="fragment_intregration_by_substitution"
+        tools:layout="@layout/fragment_intregration_by_substitution" />
+    <fragment
+        android:id="@+id/integrationByPartsFragment"
+        android:name="uk.aston.calculusldc.root.integration.IntegrationByParts.IntegrationByPartsFragment"
+        android:label="fragment_integration_by_parts"
+        tools:layout="@layout/fragment_integration_by_parts" />
+    <fragment
+        android:id="@+id/integrationByPartialFracFragment"
+        android:name="uk.aston.calculusldc.root.integration.IntegrationByPartialFracFragment"
+        android:label="fragment_integration_by_partial_frac"
+        tools:layout="@layout/fragment_integration_by_partial_frac" />
+    <activity
+        android:id="@+id/chainRuleVidActivity"
+        android:name="uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleVidActivity"
+        android:label="activity_chainrulevideo"
+        tools:layout="@layout/activity_chainrulevideo" />
+
+
+</navigation>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".root.differentiation.DifferentiationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/differentiation_title"
+        android:layout_gravity="center"
+        android:translationY="-300dp"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textSize="50sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:translationX="20dp"
+        android:translationY="60dp">
+
+        <Button
+            android:id="@+id/intro_to_diff"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/intro_to_diff_title"
+            android:textAllCaps="false"
+            android:translationY="60dp" />
+
+        <Button
+            android:id="@+id/diff_of_various_func"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/diff_of_various_func_title"
+            android:textAllCaps="false"
+            android:translationY="120dp" />
+
+        <Button
+            android:id="@+id/second_deriv_and_higher_deriv"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/second_deriv_and_higher_deriv_title"
+            android:textAllCaps="false"
+            android:translationY="180dp" />
+
+        <Button
+            android:id="@+id/stat_points"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/stat_points_title"
+            android:textAllCaps="false"
+            android:translationY="240dp" />
+
+        <Button
+            android:id="@+id/chain_rule"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/chain_rule_title"
+            android:textAllCaps="false"
+            android:translationY="300dp" />
+
+        <Button
+            android:id="@+id/product_rule"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/product_rule_title"
+            android:textAllCaps="false"
+            android:translationY="360dp" />
+
+        <Button
+            android:id="@+id/quotient_rule"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/quotient_rule_title"
+            android:textAllCaps="false"
+            android:translationY="420dp" />
+
+        <Button
+            android:id="@+id/implicit_diff"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/implicit_diff_title"
+            android:textAllCaps="false"
+            android:translationY="480dp" />
+
+        <Button
+            android:id="@+id/partial_diff"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/partial_diff_title"
+            android:textAllCaps="false"
+            android:translationY="540dp" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</FrameLayout>

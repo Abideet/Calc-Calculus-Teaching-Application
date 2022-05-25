@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".root.differentiation.ImplicitDiff.ImplicitDiffFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="@string/implicit_diff_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:translationY="35dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="Introduction" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="For many complicated physical quantities, the variables involved are not linked to each other in an explicit way. The majority of the time they are linked through some implicit equation, for example,
+f
+(
+x
+,
+y
+)
+=
+0
+. For example, consider the Kepler equation, which gives the relation between the polar coordinates of some celestial body, for example a planet, and the time elapsed from some given initial point. It is one of the most important and fundamental equations in planetary motion.
+It is given by
+M
+=
+E
+−
+ϵ
+sin
+E
+, where
+M
+ is called the mean anomaly,
+E
+ is the eccentric anomaly, and
+ϵ
+ is the eccentricity. (You don't need to worry about the meaning of these terms). It is an equation that cannot directly be written in an explicit way for
+E
+, i.e. there is no way that we can rearrange it so that
+E
+ is a function of
+M
+. We therefore say that this is an implicit equation, i.e. it is implied that
+E
+ is a function of
+M
+.
+Implicit equations often occur in mathematics.
+Sometimes we want to find the derivative of implicit equations. To do so we may use the method of implicit differentiation, where we apply the chain rule.
+How do we perform implicit differentiation?
+When it is not possible to express
+y
+ explicitly as a function of
+x
+, it is normally still possible to find
+d
+y
+d
+x
+ in terms of
+x
+ and
+y
+. The technique is simply to differentiate the expression with respect to
+x
+ (or appropriate alternative variable), bearing in mind that
+x
+ is a function of
+y
+. There are several kinds of terms to consider:
+Terms involving
+x
+ can be differentiated in a straightforward manner.
+Terms involving
+y
+ can be differentiated by the chain rule, i.e. differentiate with respect to
+y
+ and then multiply by
+d
+y
+d
+x
+.
+Terms involving both
+x
+ and
+y
+ are dealt with by a combination of these rules.
+It should then be possible to rearrange the expression to find
+d
+y
+d
+x
+in terms of
+x
+ and
+y
+."
+        android:translationY="70dp" />
+
+
+    <Button
+        android:id="@+id/vidButtonsImplicitDiff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="296dp"
+        android:layout_marginBottom="612dp"
+        android:text="Videos"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/playButtonImplicitDiff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="224dp"
+        android:layout_marginBottom="648dp"
+        android:text="quiz"
+        android:translationY="560dp"
+        android:translationX="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

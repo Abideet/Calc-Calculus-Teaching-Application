@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".root.differentiation.QuotientRule.QuotientRuleFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="@string/quotient_rule_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:translationY="35dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="Introduction" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="Functions like
+f
+(
+x
+)
+=
+sin
+x
+1
++
+e
+x
+ and
+g
+(
+x
+)
+=
+x
+2
+−
+2
+x
+−
+8
+x
+2
++
+9
+x
+−
+4
+ are known as quotients, i.e. one expression divided by another expression. As such, they can be differentiated according to the quotient rule:
+y
+=
+u
+(
+x
+)
+v
+(
+x
+)
+then
+d
+y
+d
+x
+=
+d
+u
+d
+x
+v
+−
+d
+v
+d
+x
+u
+v
+2
+
+It is important to realise that for the quotient rule, the numerator (top line) of the quotient (fraction) is
+u
+(
+x
+)
+ while the denominator (bottom line) is
+v
+(
+x
+)
+. It is crucial not to confuse the two."
+        android:translationY="70dp" />
+
+
+    <Button
+        android:id="@+id/vidButtonsQuotientRule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="296dp"
+        android:layout_marginBottom="612dp"
+        android:text="Videos"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/playButtonQuotientRule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="224dp"
+        android:layout_marginBottom="648dp"
+        android:text="quiz"
+        android:translationY="560dp"
+        android:translationX="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+</FrameLayout>

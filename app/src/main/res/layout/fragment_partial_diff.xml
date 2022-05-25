@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".root.differentiation.PartialDiff.PartialDiffFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="@string/partial_diff_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:translationY="35dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="Introduction" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="In the previous sections, we've seen how we differentiate a function of one variable such as
+f
+(
+x
+)
+=
+x
+2
++
+5
+ or
+g
+(
+u
+)
+=
+x
+ln
+(
+x
+)
+. What if we want to differentiate a function involving more that one variable such as
+f
+(
+x
+,
+y
+)
+=
+x
+2
+y
++
+5
+x
+y
+2
+?"
+        android:translationY="70dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:translationY="135dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="Notation" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:translationY="165dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="First-order partial derivatives" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="If we want to differentiate a function of more than one variable, we have to decide which variable to differentiate with respect to. For example, given function
+f
+(
+x
+,
+y
+)
+, we could differentiate with respect to
+x
+ or
+y
+. If we chose to differentiate with respect to
+x
+, this would be denoted by
+∂
+∂
+x
+f
+(
+x
+,
+y
+)
+ (or
+∂
+f
+∂
+x
+ if the variables that function
+f
+ involves are clear). Notice that the notation is very similar to
+d
+d
+x
+, the only difference being that
+d
+ is replaced with
+∂
+. This indicates that the function we're differentiating involves more than one variable and, thus, we are performing partial differentiation."
+        android:translationY="205dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:translationY="375dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="Higher-order partial derivativess" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="405dp"
+        android:gravity="center_horizontal"
+        android:text="If we want to differentiate our function multiple times, we use a similar notation to that used for higher--order derivatives, again replacing
+d
+ with
+∂
+. However, since we have a choice of which variable to differentiate with respect to each time, multiple different variables may appear at the bottom of the operator. For example,
+∂
+3
+f
+∂
+u
+2
+∂
+v
+=
+∂
+2
+∂
+u
+2
+(
+∂
+f
+∂
+v
+)
+so we first differentiate
+f
+(
+u
+,
+v
+)
+ with respect to
+v
+ and then differentiate the result twice with respect to
+u
+. It turns out that the order of variables we differentiate with respect to doesn't affect the final function. Thus,
+∂
+3
+f
+∂
+u
+2
+∂
+v
+=
+∂
+3
+f
+∂
+v
+∂
+u
+2
+."/>
+
+    <Button
+        android:id="@+id/vidButtonsPartialDiff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="296dp"
+        android:layout_marginBottom="612dp"
+        android:text="Videos"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

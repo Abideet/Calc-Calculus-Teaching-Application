@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".root.differentiation.StatPointsFragment.StatPointsFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="@string/stat_points_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:translationY="35dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:text="Introduction" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="You should recall that differentiation is simply the process of finding the rate of change of some quantity. We described in previous sections that a function can be increasing (i.e. when its derivative is positive) or decreasing (i.e. when its derivative is negative). There is also a third possibility, when it is neither increasing or decreasing, i.e. the rate of change is zero. This is known as a stationary point – the gradient is zero.
+A stationary point (maximum or minimum) occurs when the first derivative is equal to zero, i.e.
+d
+y
+d
+x
+=
+0
+."
+        android:translationY="70dp" />
+
+
+
+
+    <Button
+        android:id="@+id/vidButtonsStatPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="296dp"
+        android:layout_marginBottom="612dp"
+        android:text="Videos"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/playButtonStatPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="224dp"
+        android:layout_marginBottom="648dp"
+        android:text="quiz"
+        android:translationY="560dp"
+        android:translationX="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+
+
+
+</FrameLayout>

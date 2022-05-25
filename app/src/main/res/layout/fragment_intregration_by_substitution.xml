@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".root.integration.IntegrationBySubstitution.IntregrationBySubstitutionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Integration by Substitution"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="50dp"
+        android:text="Integration by substitution is the reverse of the chain rule."
+        />
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="90dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="130dp"
+        android:text="Thus, by defining a function for
+u
+(
+x
+)
+, we can integrate
+d
+f
+(
+u
+(
+x
+)
+)
+/
+d
+u
+(
+x
+)
+ with respect to
+u
+ to obtain our function
+f
+(
+u
+(
+x
+)
+)
+. It is important to note that the final expression should not be left as a function of the substituted variable
+u
+(
+x
+)
+.
+In practice, we tend to use integration by substitution if merging a complicated expression into one new variable will leave us with something we can integrate easily with respect to the new variable.
+
+  \n \n Example  \n Suppose we want to evaluate
+∫
+2
+(
+x
++
+2
+)^
+2
+d
+x
+. Notice that if we define
+u
+(
+x
+)
+=
+x
++
+2
+, we obtain
+d
+u
+/
+d
+x
+=
+1
+. Hence, by setting"
+        />
+
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationSub2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="360dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="399dp"
+        android:text="we have,"
+        />
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationSub3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="420dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="453dp"
+        android:text="and"
+        />
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationSub4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="470dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="499dp"
+        android:text="Thus"
+        />
+
+    <com.agog.mathdisplay.MTMathView
+        android:id="@+id/integrationSub5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:translationY="520dp"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Button
+        android:id="@+id/vidButtonsIntBySubstitution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="632dp"
+        android:text="Videos"
+        android:translationY="560dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</FrameLayout>

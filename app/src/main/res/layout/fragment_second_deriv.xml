@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".root.differentiation.SecondDeriv.SecondDerivFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="@string/second_deriv_and_higher_deriv_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="When a function
+f
+(
+x
+)
+ is differentiated to yield the derivative
+f
+′
+(
+x
+)
+, this derivative is itself a function of
+x
+ and satisfies all the required properties of a function of
+x
+. One property that it satisfies is that it can itself be differentiated. Differentiating
+f
+(
+x
+)
+ a further time with respect to
+x
+ yields what is called the second derivative, written as
+f
+′′
+(
+x
+)
+ or
+d
+2
+f
+d
+x
+2
+. Sometimes
+f
+′
+(
+x
+)
+ is called the ''first'' derivative to distinguish it from the second derivative. It is sometimes convenient to describe the second derivative as the rate of change of the first derivative.
+The actual differentiation used to find the second derivative is carried out in the same way as the differentiation used to find the first derivative.
+The second derivative can be differentiated once more to form the third derivative, denoted by
+f
+′′′
+(
+x
+)
+ or
+d
+3
+f
+d
+x
+3
+. Similarly, the third derivative can be differentiated to give the ''fourth'' derivative
+f
+4
+(
+x
+)
+. Note the use of the
+4
+ in brackets to avoid the use of four dashes which could easily be miscounted. For many functions, differentiation can be carried out indefinitely.."
+        android:translationY="70dp" />
+
+
+
+
+
+
+
+</FrameLayout>

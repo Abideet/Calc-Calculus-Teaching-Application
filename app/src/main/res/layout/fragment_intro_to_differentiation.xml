@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".root.differentiation.IntroToDifferentiationFragment">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Introduction to Differentiation"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Here we introduce the fundamentally important topic of calculus, specifically differentiation. Calculus provides a method of solving many real world problems that cannot be solved with algebra alone. It is the basis of essential mathematics in areas such as engineering, medicine and economics. Calculus allows us to work with situations where a quantity is continuously changing, a very useful tool given that most mathematical problems that we wish to solve will involve change of some description."
+                android:translationY="70dp" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Differentiation is a technique used to calculate the gradient, or slope, of a graph at different points."
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:translationY="220dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Given a function, for example,
+y
+=
+x
+2
+, it is possible to derive a formula for the gradient of the graph. This will give us the gradient function because it will tell us the gradient at any point on the curve. In our example,
+y
+=
+x
+2
+, the gradient function is
+2
+x
+.
+From this we can see that the gradient of the graph of
+y
+=
+x
+2
+  at any point on the curve is twice the
+x
+ value there.. For example, when
+x
+=
+5
+ , the gradient is
+2
+×
+5
+=
+10
+. When
+x
+=
+−
+4
+ , the gradient is
+2
+×
+−
+4
+=
+−
+8
+."
+            android:translationY="320dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="322dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Notation"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:translationY="450dp" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="480dp"
+        android:text="The most common notation for the gradient function is as follows:
+If
+y
+ is a function of
+x
+, that is
+y
+=
+f
+(
+x
+)
+, the gradient function can be written as
+d
+y
+/
+d
+x
+.
+d
+y
+/
+d
+x
+ pronounced 'dee y by dee x', is not a fraction even though it might look like one!  Think of it as the symbol for the gradient function of
+y
+=
+f
+(
+x
+)
+The process of finding
+d
+y
+/
+d
+x
+ is called differentiation with respect to
+x
+."/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
