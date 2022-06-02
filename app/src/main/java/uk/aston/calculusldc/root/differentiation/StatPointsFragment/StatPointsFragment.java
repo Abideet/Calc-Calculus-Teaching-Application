@@ -15,7 +15,8 @@ import android.widget.Button;
 import uk.aston.calculusldc.R;
 
 
-public class StatPointsFragment extends Fragment {
+public class StatPointsFragment extends Fragment
+{
 
 
 
@@ -32,7 +33,7 @@ public class StatPointsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        Button playVidButton = view.findViewById(R.id.vidButtonsStatPoints);
+        Button playVidButton = view.findViewById(R.id.vidButtonStatPoints);
 
         //play quiz once button is pressed
         playVidButton.setOnClickListener(new View.OnClickListener(){

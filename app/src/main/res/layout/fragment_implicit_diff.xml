@@ -121,10 +121,11 @@ y
         android:id="@+id/vidButtonsImplicitDiff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="296dp"
-        android:layout_marginBottom="612dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="292dp"
+        android:layout_marginBottom="72dp"
+
         android:text="Videos"
-        android:translationY="560dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -133,15 +134,13 @@ y
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="224dp"
-        android:layout_marginBottom="648dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="632dp"
         android:text="quiz"
         android:translationY="560dp"
-        android:translationX="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        />
+        app:layout_constraintHorizontal_bias="1.0" />
 
 
 

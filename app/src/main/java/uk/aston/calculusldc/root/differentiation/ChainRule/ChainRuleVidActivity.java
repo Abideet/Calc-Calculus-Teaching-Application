@@ -39,6 +39,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_chainrulevideo);
 
+
         youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideo1);
         youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideo2);
         youtubeView3 = (YouTubePlayerView) findViewById(R.id.yVideo3);

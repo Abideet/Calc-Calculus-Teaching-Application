@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -109,32 +109,26 @@ i.e. the derivative of a product is the first function multiplied by the derivat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="224dp"
-        android:layout_marginBottom="648dp"
-        android:text="Videos"
-        android:translationY="560dp"
-        android:translationX="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2" />
+        android:layout_marginEnd="292dp"
+        android:layout_marginBottom="72dp"
 
+        android:text="Videos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/playButtonProductRule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="224dp"
-        android:layout_marginBottom="648dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="632dp"
         android:text="quiz"
         android:translationY="560dp"
-        android:translationX="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2" />
+        app:layout_constraintHorizontal_bias="1.0" />
 
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
