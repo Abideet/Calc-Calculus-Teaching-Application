@@ -18,8 +18,6 @@ import uk.aston.calculusldc.R;
 public class StatPointsFragment extends Fragment
 {
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

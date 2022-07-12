@@ -141,7 +141,6 @@ public class PartialDiffVidActivity extends YouTubeBaseActivity
 
         BottomNavigationView navView = findViewById(R.id.partialDiffNav);
 
-        //navView.setSelectedItemId(R.id.homeFragment);
 
         // Perform item selected listener
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

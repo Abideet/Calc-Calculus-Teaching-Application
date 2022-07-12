@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.agog.mathdisplay.MTMathView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -93,9 +96,6 @@ public class QuizActivity extends AppCompatActivity
         if(mQuestionNumber<mQuestionLibrary.getLength() ){
             // set the text for new question,
             // and new 4 alternative to answer on four buttons
-            //mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
-
-            //mQuestionView.setLatex(mQuestionLibrary.getQuestion(mQuestionNumber).toString());
 
             if(mQuestionNumber == 1)
             {

@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 //import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -31,11 +32,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 //import com.google.android.youtube.player.YouTubeInitializationResult;
 //import com.google.android.youtube.player.YouTubePlayer;
 //import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import uk.aston.calculusldc.root.differentiation.SavedFragment;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity
     // creating a variable for exoplayer
     //ExoPlayer exoPlayer;
 
+    SavedFragment savedFragment = new SavedFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,15 +74,18 @@ public class MainActivity extends AppCompatActivity
         databaseReference = firebaseDatabase.getReference("url");
         getVideoUrl();
 
+
+
         BottomNavigationView navView = findViewById(R.id.nav);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment, R.id.searchFragment)
-                .build();
+//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+//                R.id.homeFragment, R.id.searchFragment, R.id.navigation_saved)
+//                .build();
         NavController navController = Navigation.findNavController(this, R.id.fContainer);
         NavigationUI.setupWithNavController(navView, navController);
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
 
     }
 
