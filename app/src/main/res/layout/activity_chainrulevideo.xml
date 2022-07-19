@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".root.differentiation.ChainRule.ChainRuleVidActivity">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,8 +61,10 @@
 
 
         </LinearLayout>
-    </ScrollView>
 
+
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/chainRuleNav"

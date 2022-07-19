@@ -41,7 +41,7 @@
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC (V.3 - working quiz/app/src/main/res/layout/fragment_start_chain_rule_quiz.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC (V.3 - working quiz/app/src/main/res/layouts/chain_rule/layout/activity_highest_score.xml" value="0.2359375" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC (V.3 - working quiz/app/src/main/res/layouts/chain_rule/layout/activity_quiz.xml" value="0.17" />
-        <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/activity_chainrulevideo.xml" value="0.18" />
+        <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/activity_chainrulevideo.xml" value="0.12" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/activity_implicitdiffvideo.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/activity_integration_by_parts_video.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/activity_integration_by_substitution_video.xml" value="0.16927083333333334" />
@@ -71,7 +71,7 @@
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_partial_diff.xml" value="0.18" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_product_rule.xml" value="0.16" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_quotient_rule.xml" value="0.18" />
-        <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_saved.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_saved.xml" value="0.33" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_search.xml" value="0.11666666666666667" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layout/fragment_second_deriv.xml" value="0.18" />
@@ -83,6 +83,7 @@
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layouts/chain_rule/layout/activity_quiz.xml" value="0.2" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layouts/chain_rule/layout/activity_quiz_chain_rule.xml" value="0.16510416666666666" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layouts/chain_rule/layout/fragment_chain_rule.xml" value="0.22" />
+        <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/layouts/chain_rule/layout/recyclerview_item.xml" value="0.22" />
         <entry key="..\:/Users/44784/AndroidStudioProjects/FYP/CalculusLDC Final Version/app/src/main/res/menu/bottom_nav_menu.xml" value="0.16927083333333334" />
       </map>
     </option>

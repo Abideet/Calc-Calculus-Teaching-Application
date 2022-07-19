@@ -1,12 +1,25 @@
 package uk.aston.calculusldc.root.differentiation.ChainRule;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatCallback;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.view.ActionMode;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -16,9 +29,10 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
+import uk.aston.calculusldc.root.differentiation.SavedFragment;
 import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
-public class ChainRuleVidActivity extends YouTubeBaseActivity
+public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppCompatCallback
 {
 
     ImageButton b1;
@@ -33,16 +47,21 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity
     private YouTubePlayer.OnInitializedListener onInitializedListener2;
     private YouTubePlayer.OnInitializedListener onInitializedListener3;
 
+
     @Override
     protected void onCreate(Bundle bundle)
     {
+
         super.onCreate(bundle);
-        setContentView(R.layout.activity_chainrulevideo);
+
+        AppCompatDelegate delegate = AppCompatDelegate.create(this, this);
+        delegate.onCreate(bundle);
+        delegate.setContentView(R.layout.activity_chainrulevideo);
 
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideo1);
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideo2);
-        youtubeView3 = (YouTubePlayerView) findViewById(R.id.yVideo3);
+        youtubeView1 = findViewById(R.id.yVideo1);
+        youtubeView2 = findViewById(R.id.yVideo2);
+        youtubeView3 = findViewById(R.id.yVideo3);
 
 
         //Video 1
@@ -135,7 +154,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity
 
         BottomNavigationView navView = findViewById(R.id.chainRuleNav);
 
-        //navView.setSelectedItemId(R.id.homeFragment);
+        navView.setSelectedItemId(R.id.homeFragment);
 
         // Perform item selected listener
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -144,14 +163,30 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity
 
                 switch(item.getItemId())
                 {
+
                     case R.id.searchFragment:
-                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
-                        overridePendingTransition(0,0);
+//                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
+//                        overridePendingTransition(0,0);
+
+
+                        return true;
+                    case R.id.savedFragment:
+
+
+
+                        youtubeView1.setVisibility(View.GONE);
+                        youtubeView2.setVisibility(View.GONE);
+                        youtubeView3.setVisibility(View.GONE);
+                        b1.setVisibility(View.GONE);
+                        b2.setVisibility(View.GONE);
+                        b3.setVisibility(View.GONE);
+
                         return true;
                     case R.id.homeFragment:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+
                 }
                 return false;
             }
@@ -168,4 +203,55 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
 
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onPostResume() {
+        super.onPostResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+
+
+
+
+
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onSupportActionModeStarted(ActionMode mode) {
+
+    }
+
+    @Override
+    public void onSupportActionModeFinished(ActionMode mode) {
+
+    }
+
+    @Nullable
+    @Override
+    public ActionMode onWindowStartingSupportActionMode(ActionMode.Callback callback) {
+        return null;
+    }
 }

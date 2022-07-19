@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -16,6 +18,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
+import uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleVidActivity;
 import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
 public class ProductRuleVidActivity extends YouTubeBaseActivity
@@ -34,7 +37,7 @@ public class ProductRuleVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_productrulevideo);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideoProductRule);
+        youtubeView1 = findViewById(R.id.yVideoProductRule);
 
         onInitializedListener1 = new YouTubePlayer.OnInitializedListener() {
             @Override
@@ -77,8 +80,8 @@ public class ProductRuleVidActivity extends YouTubeBaseActivity
                 switch(item.getItemId())
                 {
                     case R.id.searchFragment:
-                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
-                        overridePendingTransition(0,0);
+
+
                         return true;
                     case R.id.homeFragment:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));

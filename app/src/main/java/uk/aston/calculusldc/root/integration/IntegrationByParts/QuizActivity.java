@@ -21,7 +21,7 @@ import uk.aston.calculusldc.root.differentiation.SearchFragment;
 public class QuizActivity extends AppCompatActivity
 {
 
-    private QuestionBank mQuestionLibrary = new QuestionBank();
+    private final QuestionBank mQuestionLibrary = new QuestionBank();
 
     private TextView mScoreView;   // view for current total score
     private MTMathView mQuestionView;  //current question to answer
@@ -43,15 +43,15 @@ public class QuizActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_chain_rule);
         // setup screen for the first question with four alternative to answer
-        mScoreView = (TextView)findViewById(R.id.score);
+        mScoreView = findViewById(R.id.score);
         mQuestionView = findViewById(R.id.question);
 
-        mButtonChoice1 = (Button)findViewById(R.id.choice1);
+        mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice1.setText("hello");
 
-        mButtonChoice2 = (Button)findViewById(R.id.choice2);
-        mButtonChoice3 = (Button)findViewById(R.id.choice3);
-        mButtonChoice4 = (Button)findViewById(R.id.choice4);
+        mButtonChoice2 = findViewById(R.id.choice2);
+        mButtonChoice3 = findViewById(R.id.choice3);
+        mButtonChoice4 = findViewById(R.id.choice4);
 
         //mQuestionLibrary.initQuestions(getApplicationContext(), QuizActivity.this);
         updateQuestion();

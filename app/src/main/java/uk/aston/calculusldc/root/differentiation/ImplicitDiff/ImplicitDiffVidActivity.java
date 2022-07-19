@@ -38,8 +38,8 @@ public class ImplicitDiffVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_implicitdiffvideo);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideoImplicit);
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideoImplicit2);
+        youtubeView1 = findViewById(R.id.yVideoImplicit);
+        youtubeView2 = findViewById(R.id.yVideoImplicit2);
 
 
         //Video 1

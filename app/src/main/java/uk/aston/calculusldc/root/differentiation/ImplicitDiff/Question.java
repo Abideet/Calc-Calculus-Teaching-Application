@@ -7,7 +7,7 @@ import com.agog.mathdisplay.MTMathView;
 public class Question {
 
     private MTMathView questionNotations;
-    private String[] userChoice = new String[4];
+    private final String[] userChoice = new String[4];
     private String answer;
 
     public Question() {

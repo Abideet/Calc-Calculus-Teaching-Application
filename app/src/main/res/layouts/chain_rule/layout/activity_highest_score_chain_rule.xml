@@ -63,6 +63,20 @@
 
     </LinearLayout>
 
+    <fragment
+        android:id="@+id/fContainerHighScore"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:translationY="-80dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation_quizes" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/highScoreNav"

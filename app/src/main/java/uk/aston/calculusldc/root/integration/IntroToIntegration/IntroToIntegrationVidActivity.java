@@ -39,9 +39,9 @@ public class IntroToIntegrationVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_intro_to_integration_video);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideo1);
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideo2);
-        youtubeView3 = (YouTubePlayerView) findViewById(R.id.yVideo3);
+        youtubeView1 = findViewById(R.id.yVideo1);
+        youtubeView2 = findViewById(R.id.yVideo2);
+        youtubeView3 = findViewById(R.id.yVideo3);
 
         //Video 1
         onInitializedListener1 = new YouTubePlayer.OnInitializedListener() {

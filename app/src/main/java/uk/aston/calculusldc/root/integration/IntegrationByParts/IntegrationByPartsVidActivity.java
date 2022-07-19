@@ -42,7 +42,7 @@ public class IntegrationByPartsVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_integration_by_parts_video);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideo1);
+        youtubeView1 = findViewById(R.id.yVideo1);
 
         //Video 1
         onInitializedListener1 = new YouTubePlayer.OnInitializedListener() {
@@ -74,7 +74,7 @@ public class IntegrationByPartsVidActivity extends YouTubeBaseActivity
             }
         });
 
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideo2);
+        youtubeView2 = findViewById(R.id.yVideo2);
 
 
         //Video 1
@@ -108,7 +108,7 @@ public class IntegrationByPartsVidActivity extends YouTubeBaseActivity
         });
 
 
-        youtubeView3 = (YouTubePlayerView) findViewById(R.id.yVideo3);
+        youtubeView3 = findViewById(R.id.yVideo3);
 
 
         //Video 1

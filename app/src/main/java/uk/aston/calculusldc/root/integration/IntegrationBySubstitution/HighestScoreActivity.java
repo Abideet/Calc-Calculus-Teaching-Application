@@ -26,8 +26,8 @@ public class HighestScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highest_score_chain_rule);
 
-        currentScore = (TextView) findViewById(R.id.textScore);
-        highScore = (TextView) findViewById(R.id.textHighScore);
+        currentScore = findViewById(R.id.textScore);
+        highScore = findViewById(R.id.textHighScore);
         // receive the score from last activity by Intent
         Intent intent = getIntent();
         int score = intent.getIntExtra("score", 0);

@@ -8,6 +8,97 @@
     tools:context="root.differentiation.SavedFragment">
 
 
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationY="29dp"
+        tools:layout_editor_absoluteY="29dp">
+
+        <TableRow
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp">
+
+
+            <TextView
+                android:id="@+id/topicHeader"
+                style="@style/text_view_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/blue_500"
+                android:elevation="8dp"
+                android:text="Topic"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/scoreHeader"
+                style="@style/text_view_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:backgroundTint="#FF0000"
+                android:elevation="8dp"
+                android:text="Score"
+                android:textSize="13sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="565dp"
+        android:layout_margin="16dp"
+        android:translationY="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tableLayout"
+        tools:listitem="@layout/recyclerview_item" />
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/topicNameView"-->
+<!--        android:layout_width="244dp"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:text="Enter Topic Name"-->
+<!--        android:textSize="30dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/editTextTopic"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTopic"-->
+<!--        android:layout_width="265dp"-->
+<!--        android:layout_height="71dp"-->
+<!--        android:autofillHints="Topic Name"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Topic Name"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:labelFor="@id/tableLayout"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:translationY="-250dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/topicButton"-->
+<!--        android:layout_width="265dp"-->
+<!--        android:layout_height="71dp"-->
+<!--        android:text="Get Topic"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5" />-->
+
+
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

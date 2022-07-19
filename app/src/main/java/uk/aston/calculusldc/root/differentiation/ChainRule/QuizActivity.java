@@ -1,7 +1,11 @@
 package uk.aston.calculusldc.root.differentiation.ChainRule;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -10,20 +14,30 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.agog.mathdisplay.MTMathView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
+import uk.aston.calculusldc.root.Database.MyRoomDatabase;
+import uk.aston.calculusldc.root.Database.Score;
+import uk.aston.calculusldc.root.differentiation.SavedFragment;
 import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
 public class QuizActivity extends AppCompatActivity
 {
 
-    private QuestionBank mQuestionLibrary = new QuestionBank();
+    private final QuestionBank mQuestionLibrary = new QuestionBank();
 
     private TextView mScoreView;   // view for current total score
+    private TextView mScoreTextView;
     private MTMathView mQuestionView;  //current question to answer
     private MTMathView mQuestionView1;  //current question to answer
     private Button mButtonChoice1; // multiple choice 1 for mQuestionView
@@ -43,15 +57,17 @@ public class QuizActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_chain_rule);
 
-        mScoreView = (TextView)findViewById(R.id.score);
+        mScoreView = findViewById(R.id.score);
         mQuestionView = findViewById(R.id.question);
+        mScoreTextView = findViewById(R.id.score_text);
 
-        mButtonChoice1 = (Button)findViewById(R.id.choice1);
+
+        mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice1.setText("hello");
 
-        mButtonChoice2 = (Button)findViewById(R.id.choice2);
-        mButtonChoice3 = (Button)findViewById(R.id.choice3);
-        mButtonChoice4 = (Button)findViewById(R.id.choice4);
+        mButtonChoice2 = findViewById(R.id.choice2);
+        mButtonChoice3 = findViewById(R.id.choice3);
+        mButtonChoice4 = findViewById(R.id.choice4);
 
 
         updateQuestion();
@@ -74,20 +90,54 @@ public class QuizActivity extends AppCompatActivity
 
                 switch(item.getItemId())
                 {
+
                     case R.id.searchFragment:
-                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
-                        overridePendingTransition(0,0);
+//                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
+//                        overridePendingTransition(0,0);
+                        Fragment searchFragment = new SearchFragment();
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+                        transaction.replace(R.id.activity_quiz, searchFragment);
+                        transaction.addToBackStack(null);
+
+                        mScoreView.setVisibility(View.GONE);
+                        mScoreTextView.setVisibility(View.GONE);
+                        mQuestionView.setVisibility(View.GONE);
+                        mButtonChoice1.setVisibility(View.GONE);
+                        mButtonChoice2.setVisibility(View.GONE);
+                        mButtonChoice3.setVisibility(View.GONE);
+                        mButtonChoice4.setVisibility(View.GONE);
+
+                        transaction.commit();
+
+                        return true;
+                    case R.id.savedFragment:
+
+                        Fragment savedFragment = new SavedFragment();
+                        FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
+
+                        transaction1.replace(R.id.activity_quiz, savedFragment);
+                        transaction1.addToBackStack(null);
+
+                        mScoreView.setVisibility(View.GONE);
+                        mScoreTextView.setVisibility(View.GONE);
+                        mQuestionView.setVisibility(View.GONE);
+                        mButtonChoice1.setVisibility(View.GONE);
+                        mButtonChoice2.setVisibility(View.GONE);
+                        mButtonChoice3.setVisibility(View.GONE);
+                        mButtonChoice4.setVisibility(View.GONE);
+
+                        transaction1.commit();
                         return true;
                     case R.id.homeFragment:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+
                 }
                 return false;
             }
         });
-
-
     }
 
     private void updateQuestion(){
@@ -125,6 +175,29 @@ public class QuizActivity extends AppCompatActivity
         else {
             Toast.makeText(QuizActivity.this, "It was the last question!", Toast.LENGTH_SHORT).show();
             //switch to new activity
+
+            //Inserting data into database
+            final MyRoomDatabase db = MyRoomDatabase.getDatabase(this);
+            Score score = new Score();
+            score.setmTopic("Chain Rule");
+
+            String scoreString = mScoreView.getText().toString();
+            double scoreDouble = convertSpeedStringtoDouble(scoreString);
+
+            score.setMscore(scoreDouble);
+
+
+            try
+            {
+                //if statement which doesnt save scores lower than current high score
+                db.scoreDao().insert(score);
+                Log.d(TAG,"insertion worked");
+            }catch(SQLiteConstraintException e){
+                Log.d(TAG, "insertion failed");
+            }
+
+
+
             Intent intent = new Intent(QuizActivity.this, HighestScoreActivity.class);
             intent.putExtra("score", mScore); // pass the current score to the second screen
             startActivity(intent);
@@ -132,15 +205,18 @@ public class QuizActivity extends AppCompatActivity
     }
 
     // show current total score for the user
-    private void updateScore(int point) {
+    private void updateScore(int point)
+    {
         mScoreView.setText(""+mScore+"/"+mQuestionLibrary.getLength());
     }
 
-    public void onClick(View view) {
+    public void onClick(View view)
+    {
         //all logic for all answers buttons in one method
         Button answer = (Button) view;
         // if the answer is correct, increase the score
-        if (answer.getText().equals(mAnswer)){
+        if (answer.getText().equals(mAnswer))
+        {
             mScore = mScore + 1;
              Toast.makeText(QuizActivity.this, "Correct!", Toast.LENGTH_SHORT).show();
         }else
@@ -150,4 +226,15 @@ public class QuizActivity extends AppCompatActivity
         // once user answer the question, we move on to the next one, if any
         updateQuestion();
     }
- }
+
+    public Double convertSpeedStringtoDouble(String str)
+    {
+        StringTokenizer tokenizer = new StringTokenizer(str, "/");
+        Double distance = Double.parseDouble(tokenizer.nextToken());
+
+        return distance;
+    }
+
+
+
+}

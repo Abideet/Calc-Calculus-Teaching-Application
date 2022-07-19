@@ -36,7 +36,7 @@ public class IntegrationBySubstitutionVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_integration_by_substitution_video);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideo1);
+        youtubeView1 = findViewById(R.id.yVideo1);
 
 
         //Video 1

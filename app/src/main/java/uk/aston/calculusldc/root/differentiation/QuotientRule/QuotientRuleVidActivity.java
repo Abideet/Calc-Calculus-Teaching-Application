@@ -39,9 +39,9 @@ public class QuotientRuleVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_quotientrulevideo);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideoQuotientRule);
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideoQuotientRule2);
-        youtubeView3 = (YouTubePlayerView) findViewById(R.id.yVideoQuotientRule3);
+        youtubeView1 = findViewById(R.id.yVideoQuotientRule);
+        youtubeView2 = findViewById(R.id.yVideoQuotientRule2);
+        youtubeView3 = findViewById(R.id.yVideoQuotientRule3);
 
 
         //Video 1

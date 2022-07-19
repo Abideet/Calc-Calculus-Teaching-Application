@@ -38,8 +38,8 @@ public class StatPointsVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_statpointsvideo);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideoStatPoints);
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideoStatPoints2);
+        youtubeView1 = findViewById(R.id.yVideoStatPoints);
+        youtubeView2 = findViewById(R.id.yVideoStatPoints2);
 
 
         //Video 1

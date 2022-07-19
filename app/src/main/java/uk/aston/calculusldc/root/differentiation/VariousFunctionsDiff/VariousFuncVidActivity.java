@@ -39,9 +39,9 @@ public class VariousFuncVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_variousfuncvideo);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideoVariousFunc);
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideoVariousFunc2);
-        youtubeView3 = (YouTubePlayerView) findViewById(R.id.yVideoVariousFunc3);
+        youtubeView1 = findViewById(R.id.yVideoVariousFunc);
+        youtubeView2 = findViewById(R.id.yVideoVariousFunc2);
+        youtubeView3 = findViewById(R.id.yVideoVariousFunc3);
 
         //Video 1
         onInitializedListener1 = new YouTubePlayer.OnInitializedListener() {

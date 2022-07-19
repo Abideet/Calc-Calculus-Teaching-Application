@@ -39,9 +39,9 @@ public class PartialDiffVidActivity extends YouTubeBaseActivity
         super.onCreate(bundle);
         setContentView(R.layout.activity_partialdiffvideo);
 
-        youtubeView1 = (YouTubePlayerView) findViewById(R.id.yVideoPartialDiff);
-        youtubeView2 = (YouTubePlayerView) findViewById(R.id.yVideoPartialDiff2);
-        youtubeView3 = (YouTubePlayerView) findViewById(R.id.yVideoPartialDiff3);
+        youtubeView1 = findViewById(R.id.yVideoPartialDiff);
+        youtubeView2 = findViewById(R.id.yVideoPartialDiff2);
+        youtubeView3 = findViewById(R.id.yVideoPartialDiff3);
 
 
         //Video 1

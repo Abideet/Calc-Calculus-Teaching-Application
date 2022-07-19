@@ -3,16 +3,26 @@ package uk.aston.calculusldc.root.differentiation.StatPointsFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
 import uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleFragment;
+import uk.aston.calculusldc.root.differentiation.SavedFragment;
+import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
 public class HighestScoreActivity extends AppCompatActivity {
 
@@ -26,8 +36,11 @@ public class HighestScoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highest_score_chain_rule);
 
-        currentScore = (TextView) findViewById(R.id.textScore);
-        highScore = (TextView) findViewById(R.id.textHighScore);
+        View fragment = findViewById(R.id.fContainerHighScore);
+        fragment.setVisibility(View.INVISIBLE);
+
+        currentScore = findViewById(R.id.textScore);
+        highScore = findViewById(R.id.textHighScore);
         // receive the score from last activity by Intent
         Intent intent = getIntent();
         int score = intent.getIntExtra("score", 0);
@@ -55,6 +68,49 @@ public class HighestScoreActivity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment, R.id.searchFragment)
                 .build();
+
+        BottomNavigationView navView = findViewById(R.id.highScoreNav);
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+
+                    case R.id.searchFragment:
+                        fragment.setVisibility(View.VISIBLE);
+                        currentScore.setVisibility(View.GONE);
+                        highScore.setVisibility(View.GONE);
+                        repeat.setVisibility(View.GONE);
+                        back.setVisibility(View.GONE);
+
+                        NavController navController = Navigation.findNavController(uk.aston.calculusldc.root.differentiation.StatPointsFragment.HighestScoreActivity.this,R.id.fContainerHighScore);
+                        navController.navigateUp();
+                        navController.navigate( R.id.searchFragment2);
+
+                        return true;
+                    case R.id.savedFragment:
+
+                        fragment.setVisibility(View.VISIBLE);
+                        currentScore.setVisibility(View.GONE);
+                        highScore.setVisibility(View.GONE);
+                        repeat.setVisibility(View.GONE);
+                        back.setVisibility(View.GONE);
+
+                        NavController navController2 = Navigation.findNavController(uk.aston.calculusldc.root.differentiation.StatPointsFragment.HighestScoreActivity.this,R.id.fContainerHighScore);
+                        navController2.navigateUp();
+                        navController2.navigate( R.id.savedFragment2);
+
+                        return true;
+                    case R.id.homeFragment:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
 
     }
 

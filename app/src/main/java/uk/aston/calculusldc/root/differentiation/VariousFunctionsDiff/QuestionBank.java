@@ -18,7 +18,7 @@ public class QuestionBank
     List <Question> list = new ArrayList<>();
 
 
-    private String [] textQuestions =
+    private final String [] textQuestions =
             {
             "question 1",
             "question 2",
@@ -28,7 +28,7 @@ public class QuestionBank
 
 
 
-    private String multipleChoice [][] =
+    private final String[][] multipleChoice =
             {
             {"(5x^2 + 6)*sin(4*x^2 + 6x + 5)","(8x + 6)*cos(4*x^2 + 6x + 5)" ,  "-10*x^(-11) + 30*x^9",  "sin(4*x^2 + 6x + 5)"},
             {"6*sin(2x) + 30*cos(3x)", "2*(3*x^2 + 5)^(-1.5)*x^2",  "(3x + 5)^(-1.5)x^3", "(5x + 5)^(-2.5)x^3"},
@@ -38,7 +38,7 @@ public class QuestionBank
     };
 
     //Array of correct answers
-    private String mCorrectAnswers[] = {"-10*x^(-11) + 30*x^9", "6*sin(2x) + 30*cos(3x)", "32*e^(4x) - 35*cos(7x)", "-8*x^(-2) + 90*x^8"};
+    private final String[] mCorrectAnswers = {"-10*x^(-11) + 30*x^9", "6*sin(2x) + 30*cos(3x)", "32*e^(4x) - 35*cos(7x)", "-8*x^(-2) + 90*x^8"};
 
 
     // method returns number of questions in list
