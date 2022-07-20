@@ -16,18 +16,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.agog.mathdisplay.MTMathView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringTokenizer;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
-import uk.aston.calculusldc.root.Database.MyRoomDatabase;
 import uk.aston.calculusldc.root.Database.Score;
+import uk.aston.calculusldc.root.Database.ScoreViewModel;
 import uk.aston.calculusldc.root.differentiation.SavedFragment;
 import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
@@ -50,6 +49,8 @@ public class QuizActivity extends AppCompatActivity
     private String mAnswer;  // correct answer for question in mQuestionView
     private int mScore = 0;  // current total score
     public int mQuestionNumber = 0; // current question number
+
+    private ScoreViewModel mScoreViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -81,6 +82,9 @@ public class QuizActivity extends AppCompatActivity
 
         BottomNavigationView navView = findViewById(R.id.quizNav);
 
+        mScoreViewModel = ViewModelProviders.of(this).get(ScoreViewModel.class);
+
+
         //navView.setSelectedItemId(R.id.homeFragment);
 
         // Perform item selected listener
@@ -92,8 +96,7 @@ public class QuizActivity extends AppCompatActivity
                 {
 
                     case R.id.searchFragment:
-//                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
-//                        overridePendingTransition(0,0);
+
                         Fragment searchFragment = new SearchFragment();
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -174,35 +177,39 @@ public class QuizActivity extends AppCompatActivity
        }
         else {
             Toast.makeText(QuizActivity.this, "It was the last question!", Toast.LENGTH_SHORT).show();
-            //switch to new activity
 
-            //Inserting data into database
-            final MyRoomDatabase db = MyRoomDatabase.getDatabase(this);
+
+
+
             Score score = new Score();
             score.setmTopic("Chain Rule");
 
             String scoreString = mScoreView.getText().toString();
-            double scoreDouble = convertSpeedStringtoDouble(scoreString);
+            double scoreDouble = scoreStringtoDoubleConverter(scoreString);
 
             score.setMscore(scoreDouble);
 
 
             try
             {
-                //if statement which doesnt save scores lower than current high score
-                db.scoreDao().insert(score);
+                mScoreViewModel.insert(score);
+                mScoreViewModel.update(score);
                 Log.d(TAG,"insertion worked");
             }catch(SQLiteConstraintException e){
                 Log.d(TAG, "insertion failed");
             }
 
 
-
+            //switch to new activity
             Intent intent = new Intent(QuizActivity.this, HighestScoreActivity.class);
             intent.putExtra("score", mScore); // pass the current score to the second screen
             startActivity(intent);
         }
     }
+
+
+
+
 
     // show current total score for the user
     private void updateScore(int point)
@@ -227,12 +234,12 @@ public class QuizActivity extends AppCompatActivity
         updateQuestion();
     }
 
-    public Double convertSpeedStringtoDouble(String str)
+    public Double scoreStringtoDoubleConverter(String scoreString)
     {
-        StringTokenizer tokenizer = new StringTokenizer(str, "/");
-        Double distance = Double.parseDouble(tokenizer.nextToken());
+        StringTokenizer tokenizer = new StringTokenizer(scoreString, "/");
+        Double score = Double.parseDouble(tokenizer.nextToken());
 
-        return distance;
+        return score;
     }
 
 

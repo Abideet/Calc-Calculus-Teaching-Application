@@ -1,11 +1,14 @@
 package uk.aston.calculusldc.root.differentiation.ChainRule;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,6 +27,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
+import uk.aston.calculusldc.root.Database.Score;
+import uk.aston.calculusldc.root.Database.ScoreViewModel;
 import uk.aston.calculusldc.root.differentiation.SavedFragment;
 import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
@@ -33,6 +39,7 @@ public class HighestScoreActivity extends AppCompatActivity {
     Button repeat;
     Button back;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -41,6 +48,7 @@ public class HighestScoreActivity extends AppCompatActivity {
 
         currentScore = findViewById(R.id.textScore);
         highScore = findViewById(R.id.textHighScore);
+
         // receive the score from last activity by Intent
 
         View fragment = findViewById(R.id.fContainerHighScore);
@@ -55,17 +63,19 @@ public class HighestScoreActivity extends AppCompatActivity {
         SharedPreferences mypref = getPreferences(MODE_PRIVATE);
         int highscore = mypref.getInt("Chain Rule",0);
 
-        String key = this.getClass().getSimpleName();
-
         if(highscore>= score)
             highScore.setText("High score: "+highscore);
+
         else
         {
             //update the highscore in shared pref
             highScore.setText("New highscore: "+score);
+
             SharedPreferences.Editor editor = mypref.edit();
             editor.putInt("Chain Rule", score);
             editor.commit();
+
+
         }
 
 

@@ -1,7 +1,11 @@
 package uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -19,8 +24,12 @@ import androidx.navigation.ui.NavigationUI;
 import com.agog.mathdisplay.MTMathView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.StringTokenizer;
+
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
+import uk.aston.calculusldc.root.Database.Score;
+import uk.aston.calculusldc.root.Database.ScoreViewModel;
 import uk.aston.calculusldc.root.differentiation.SavedFragment;
 import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
@@ -37,6 +46,8 @@ public class QuizActivity extends AppCompatActivity
     private Button mButtonChoice2; // multiple choice 2 for mQuestionView
     private Button mButtonChoice3; // multiple choice 3 for mQuestionView
     private Button mButtonChoice4; // multiple choice 4 for mQuestionView
+
+    private ScoreViewModel mScoreViewModel;
 
     private MTMathView mAnswerView;
 
@@ -60,6 +71,8 @@ public class QuizActivity extends AppCompatActivity
         mButtonChoice2 = findViewById(R.id.choice2);
         mButtonChoice3 = findViewById(R.id.choice3);
         mButtonChoice4 = findViewById(R.id.choice4);
+
+        mScoreViewModel = ViewModelProviders.of(this).get(ScoreViewModel.class);
 
         //mQuestionLibrary.initQuestions(getApplicationContext(), QuizActivity.this);
         updateQuestion();
@@ -162,6 +175,27 @@ public class QuizActivity extends AppCompatActivity
        }
         else {
             Toast.makeText(QuizActivity.this, "It was the last question!", Toast.LENGTH_SHORT).show();
+
+            Score score = new Score();
+            score.setmTopic("Differentiation of Various Functions");
+
+            String scoreString = mScoreView.getText().toString();
+            double scoreDouble = scoreStringtoDoubleConverter(scoreString);
+
+            score.setMscore(scoreDouble);
+
+
+            try
+            {
+                mScoreViewModel.insert(score);
+                mScoreViewModel.update(score);
+                Log.d(TAG,"insertion worked");
+            }catch(SQLiteConstraintException e){
+                Log.d(TAG, "insertion failed");
+            }
+
+
+
             //switch to new activity
             Intent intent = new Intent(QuizActivity.this, HighestScoreActivity.class);
             intent.putExtra("score", mScore); // pass the current score to the second screen
@@ -188,4 +222,14 @@ public class QuizActivity extends AppCompatActivity
         // once user answer the question, we move on to the next one, if any
         updateQuestion();
     }
+
+    public Double scoreStringtoDoubleConverter(String scoreString)
+    {
+        StringTokenizer tokenizer = new StringTokenizer(scoreString, "/");
+        Double score = Double.parseDouble(tokenizer.nextToken());
+
+        return score;
+    }
+
+
  }
