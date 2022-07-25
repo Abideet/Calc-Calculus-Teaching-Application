@@ -44,79 +44,14 @@ import uk.aston.calculusldc.root.differentiation.SavedFragment;
 public class MainActivity extends AppCompatActivity
 {
 
-    String api_key = "AIzaSyCmRJznAFXy952HYqbjKVEFHTsR-HIIHyc";
-
-    // creating a variable for our Firebase Database.
-    FirebaseDatabase firebaseDatabase;
-
-    // creating a variable for our Database
-    // Reference for Firebase.
-    DatabaseReference databaseReference;
-
-    // creating a variable for exoplayerview.
-    //PlayerView exoPlayerView;
-
-    // creating a variable for exoplayer
-    //ExoPlayer exoPlayer;
-
-    SavedFragment savedFragment = new SavedFragment();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // below line is used to get the
-        // instance of our Firebase database.
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
-        // below line is used to get reference for our database.
-        databaseReference = firebaseDatabase.getReference("url");
-        getVideoUrl();
-
-
-
         BottomNavigationView navView = findViewById(R.id.nav);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.homeFragment, R.id.searchFragment, R.id.navigation_saved)
-//                .build();
         NavController navController = Navigation.findNavController(this, R.id.fContainer);
         NavigationUI.setupWithNavController(navView, navController);
-        //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-
-    }
-
-    private void getVideoUrl() {
-        // calling add value event listener method
-        // for getting the values from database.
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // this method is call to get the
-                // realtime updates in the data.
-                // this method is called when the
-                // data is changed in our Firebase console.
-                // below line is for getting the data
-                // from snapshot of our database.
-                String videoUrl = snapshot.getValue(String.class);
-
-                // after getting the value for our video url
-                // we are passing that value to our
-                // initialize exoplayer method to load our video
-                //initializeExoplayerView(videoUrl);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error)
-            {
-                // calling on cancelled method when we receive
-                // any error or we are not able to get the data.
-                Toast.makeText(MainActivity.this, "Fail to get video url.", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
 }

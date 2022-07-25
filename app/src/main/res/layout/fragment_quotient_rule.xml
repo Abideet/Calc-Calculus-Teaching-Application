@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:text="@string/quotient_rule_title"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:textSize="30sp" />
 
     <TextView
@@ -20,7 +20,7 @@
         android:layout_height="match_parent"
         android:textSize="25sp"
         android:translationY="35dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:gravity="center_horizontal"
         android:text="Introduction" />
 
@@ -112,6 +112,7 @@ x
         android:layout_marginBottom="628dp"
         android:text="Videos"
         android:translationY="560dp"
+        android:backgroundTint="@color/astonPurple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.154"
@@ -126,6 +127,7 @@ x
         android:layout_marginBottom="632dp"
         android:text="quiz"
         android:translationY="560dp"
+        android:backgroundTint="@color/astonPurple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0" />

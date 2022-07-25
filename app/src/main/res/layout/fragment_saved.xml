@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:backgroundTint="@color/blue_500"
+                android:backgroundTint="@color/astonPurple"
                 android:elevation="8dp"
                 android:text="Topic"
                 android:textSize="13sp" />
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:backgroundTint="#FF0000"
+                android:backgroundTint="@color/astonOrange"
                 android:elevation="8dp"
                 android:text="Score"
                 android:textSize="13sp" />

@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.math.BigInteger;
@@ -24,7 +23,7 @@ import java.math.BigInteger;
             },
             version = 5, exportSchema = false)
 
-    @TypeConverters({Converters.class})
+
     public abstract class MyRoomDatabase extends RoomDatabase {
 
         //ask if you have to create 2 different daos

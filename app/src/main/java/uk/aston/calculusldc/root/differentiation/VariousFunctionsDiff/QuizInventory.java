@@ -1,4 +1,4 @@
-package uk.aston.calculusldc.root.differentiation.ImplicitDiff;
+package uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff;
 
 // This class contains a list of questions
 
@@ -8,7 +8,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionBank
+public class QuizInventory
 {
 
     private Context context;
@@ -30,15 +30,15 @@ public class QuestionBank
 
     private final String[][] multipleChoice =
             {
-            {"(6 - 2x - 2y)/(2 + 2y + 2x)","(8x + 6)*cos(4*x^2 + 6x + 5)" ,  "(8 - 2x - 2y)/(4 + 8y + 8x)",  "sin(4*x^2 + 6x + 5)"},
-            {"5*(2*x^5 + 4)^(-0.5)*x^4", "(3 - 2x + 3y)/(7 + 2y - 3x)",  "(3x + 5)^(-1.5)x^3", "(10 - 2x + 3y)/(11 + 2y - 4x)"},
-            {"7.5*(5*x^3 + 2)^(-0.5)*x^2", "(9 - 3x + 2y)/(3 + 4y - x)",  "5.5*(6*x^6 + 2)^(-1.5)*x^6", "(8 - 2x + y)/(3 + 2y - x)"},
-            {"(4x + 9)*cos(2*x^2 + 9x + 8)", "(8 - 2x - 2y)/(5 + 2y + 2x)",  "(3x + 10)*sin(4*x^2 + 9x + 10)", "(14 - 2x - 2y)/(9 + 4y + 4x)"},
+            {"(5x^2 + 6)*sin(4*x^2 + 6x + 5)","(8x + 6)*cos(4*x^2 + 6x + 5)" ,  "-10*x^(-11) + 30*x^9",  "sin(4*x^2 + 6x + 5)"},
+            {"6*sin(2x) + 30*cos(3x)", "2*(3*x^2 + 5)^(-1.5)*x^2",  "(3x + 5)^(-1.5)x^3", "(5x + 5)^(-2.5)x^3"},
+            {"7.5*(5*x^3 + 2)^(-0.5)*x^2", "32*e^(4x) - 35*cos(7x)",  "5.5*(6*x^6 + 2)^(-1.5)*x^6", "5*(2*x^6 + 2)^(-0.5)*x^2"},
+            {"(4x + 9)*cos(2*x^2 + 9x + 8)", "sin(2*x^2 + 10x)",  "8*x^(-2) + 90*x^8", "(8x + 10)*sin(4*x^3 + 11x + 3)"},
 
     };
 
     //Array of correct answers
-    private final String[] mCorrectAnswers = {"(6 - 2x - 2y)/(2 + 2y + 2x)", "(3 - 2x + 3y)/(7 + 2y - 3x)", "(8 - 2x + y)/(3 + 2y - x)", "(8 - 2x - 2y)/(5 + 2y + 2x)"};
+    private final String[] mCorrectAnswers = {"-10*x^(-11) + 30*x^9", "6*sin(2x) + 30*cos(3x)", "32*e^(4x) - 35*cos(7x)", "-8*x^(-2) + 90*x^8"};
 
 
     // method returns number of questions in list

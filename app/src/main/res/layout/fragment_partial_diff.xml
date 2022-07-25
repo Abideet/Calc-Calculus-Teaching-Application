@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:text="@string/partial_diff_title"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:textSize="30sp" />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_height="match_parent"
         android:textSize="25sp"
         android:translationY="35dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:gravity="center_horizontal"
         android:text="Introduction" />
 
@@ -74,7 +74,7 @@ y
         android:layout_height="match_parent"
         android:textSize="25sp"
         android:translationY="135dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:gravity="center_horizontal"
         android:text="Notation" />
 
@@ -83,7 +83,7 @@ y
         android:layout_height="match_parent"
         android:textSize="25sp"
         android:translationY="165dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:gravity="center_horizontal"
         android:text="First-order partial derivatives" />
 
@@ -141,7 +141,7 @@ d
         android:layout_height="match_parent"
         android:textSize="25sp"
         android:translationY="375dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:gravity="center_horizontal"
         android:text="Higher-order partial derivativess" />
 
@@ -213,6 +213,7 @@ u
         android:layout_marginEnd="296dp"
         android:layout_marginBottom="612dp"
         android:text="Videos"
+        android:backgroundTint="@color/astonPurple"
         android:translationY="560dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

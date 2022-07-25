@@ -1,10 +1,12 @@
 package uk.aston.calculusldc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +15,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class HomeFragment extends Fragment {
+
+    public ProgressBar pBar;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -44,8 +48,6 @@ public class HomeFragment extends Fragment {
                 NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_homeFragment_to_integrationFragment);
             }
         });
-
-
 
 
     }

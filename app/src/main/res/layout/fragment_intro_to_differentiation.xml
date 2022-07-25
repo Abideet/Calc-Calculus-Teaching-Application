@@ -10,8 +10,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Introduction to Differentiation"
+                android:gravity="center"
+                android:translationY="-330dp"
+                android:textColor="@color/astonPurple"
                 android:textSize="30dp"
-                android:textStyle="bold" />
+                 />
 
             <TextView
                 android:layout_width="match_parent"
@@ -24,8 +27,9 @@
                     android:layout_height="match_parent"
                     android:text="Differentiation is a technique used to calculate the gradient, or slope, of a graph at different points."
                     android:textSize="25dp"
-                    android:textStyle="bold"
-                    android:translationY="220dp" />
+                    android:textColor="@color/astonPurple"
+                    android:gravity="center"
+                    android:translationY="-90dp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -85,8 +89,9 @@ x
         android:layout_height="match_parent"
         android:text="Notation"
         android:textSize="25dp"
-        android:textStyle="bold"
-        android:translationY="450dp" />
+        android:textColor="@color/astonPurple"
+        android:gravity="center"
+        android:translationY="105dp" />
 
     <TextView
 

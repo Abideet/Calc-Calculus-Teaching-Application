@@ -3,6 +3,7 @@ package uk.aston.calculusldc.root.differentiation.QuotientRule;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,14 +32,21 @@ public class HighestScoreActivity extends AppCompatActivity {
     Button repeat;
     Button back;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highest_score_chain_rule);
 
         currentScore = findViewById(R.id.textScore);
         highScore = findViewById(R.id.textHighScore);
+
         // receive the score from last activity by Intent
+
+        View fragment = findViewById(R.id.fContainerHighScore);
+        fragment.setVisibility(View.INVISIBLE);
+
         Intent intent = getIntent();
         int score = intent.getIntExtra("score", 0);
         // display current score
@@ -44,17 +54,29 @@ public class HighestScoreActivity extends AppCompatActivity {
 
         // use Shared preferences to save the best score
         SharedPreferences mypref = getPreferences(MODE_PRIVATE);
-        int highscore = mypref.getInt("highscore",0);
+        int highscore = mypref.getInt("Chain Rule",0);
+
         if(highscore>= score)
             highScore.setText("High score: "+highscore);
+
         else
         {
             //update the highscore in shared pref
             highScore.setText("New highscore: "+score);
+
             SharedPreferences.Editor editor = mypref.edit();
-            editor.putInt("highscore", score);
+            editor.putInt("Chain Rule", score);
             editor.commit();
+
+
         }
+
+        SharedPreferences mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor mEditor = mPreferences.edit();
+        mEditor.putInt("highScore", highscore);
+        mEditor.commit();
+
+
 
         //buttons
         repeat = findViewById(R.id.buttonRepeat);
@@ -65,6 +87,10 @@ public class HighestScoreActivity extends AppCompatActivity {
                 .build();
 
         BottomNavigationView navView = findViewById(R.id.highScoreNav);
+
+        //navView.setSelectedItemId(R.id.homeFragment);
+
+        // Perform item selected listener
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -73,36 +99,29 @@ public class HighestScoreActivity extends AppCompatActivity {
                 {
 
                     case R.id.searchFragment:
-//                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
-//                        overridePendingTransition(0,0);
-                        Fragment searchFragment = new SearchFragment();
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-                        transaction.replace(R.id.activity_quiz, searchFragment);
-                        transaction.addToBackStack(null);
-
+                        fragment.setVisibility(View.VISIBLE);
                         currentScore.setVisibility(View.GONE);
                         highScore.setVisibility(View.GONE);
                         repeat.setVisibility(View.GONE);
                         back.setVisibility(View.GONE);
 
+                        NavController navController = Navigation.findNavController(HighestScoreActivity.this,R.id.fContainerHighScore);
+                        navController.navigateUp();
+                        navController.navigate( R.id.searchFragment2);
 
                         return true;
                     case R.id.savedFragment:
 
-                        Fragment savedFragment = new SavedFragment();
-                        FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-
-                        transaction1.replace(R.id.activity_quiz, savedFragment);
-                        transaction1.addToBackStack(null);
-
+                        fragment.setVisibility(View.VISIBLE);
                         currentScore.setVisibility(View.GONE);
                         highScore.setVisibility(View.GONE);
                         repeat.setVisibility(View.GONE);
                         back.setVisibility(View.GONE);
 
+                        NavController navController2 = Navigation.findNavController(HighestScoreActivity.this,R.id.fContainerHighScore);
+                        navController2.navigateUp();
+                        navController2.navigate( R.id.savedFragment2);
 
-                        transaction1.commit();
                         return true;
                     case R.id.homeFragment:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -116,9 +135,10 @@ public class HighestScoreActivity extends AppCompatActivity {
 
     }
 
+
     public void onRepeatClick(View view)
     {
-        Intent intent = new Intent(HighestScoreActivity.this, QuizActivity.class);
+        Intent intent = new Intent(HighestScoreActivity.this, uk.aston.calculusldc.root.differentiation.ChainRule.QuizActivity.class);
         startActivity(intent);
     }
 
@@ -133,4 +153,3 @@ public class HighestScoreActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.activity_highest_score, new ChainRuleFragment()).commit();
     }
 }
-

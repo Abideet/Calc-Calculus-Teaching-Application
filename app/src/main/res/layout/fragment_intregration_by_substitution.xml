@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Integration by Substitution"
+        android:gravity="center_horizontal"
+        android:textColor="@color/astonPurple"
         android:textSize="30dp"
-        android:textStyle="bold" />
+         />
 
     <TextView
         android:layout_width="match_parent"
@@ -168,6 +170,7 @@ x
         android:layout_marginStart="28dp"
         android:layout_marginBottom="632dp"
         android:text="Videos"
+        android:backgroundTint="@color/astonPurple"
         android:translationY="560dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

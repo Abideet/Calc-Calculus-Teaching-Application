@@ -1,4 +1,4 @@
-package uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff;
+package uk.aston.calculusldc.root.differentiation.StatPointsFragment;
 
 // This class contains a list of questions
 
@@ -8,7 +8,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionBank
+public class QuizInventory
 {
 
     private Context context;
@@ -30,15 +30,15 @@ public class QuestionBank
 
     private final String[][] multipleChoice =
             {
-            {"(5x^2 + 6)*sin(4*x^2 + 6x + 5)","(8x + 6)*cos(4*x^2 + 6x + 5)" ,  "-10*x^(-11) + 30*x^9",  "sin(4*x^2 + 6x + 5)"},
-            {"6*sin(2x) + 30*cos(3x)", "2*(3*x^2 + 5)^(-1.5)*x^2",  "(3x + 5)^(-1.5)x^3", "(5x + 5)^(-2.5)x^3"},
-            {"7.5*(5*x^3 + 2)^(-0.5)*x^2", "32*e^(4x) - 35*cos(7x)",  "5.5*(6*x^6 + 2)^(-1.5)*x^6", "5*(2*x^6 + 2)^(-0.5)*x^2"},
-            {"(4x + 9)*cos(2*x^2 + 9x + 8)", "sin(2*x^2 + 10x)",  "8*x^(-2) + 90*x^8", "(8x + 10)*sin(4*x^3 + 11x + 3)"},
+            {"(-5,283) (2,-60)","(-6,134) (2,-15)" ,  "(-4,142) (3,-65)",  "(-4,234) (2,-48)"},
+            {"(-5,520) (2,-215)", "(-5,424) (4,-305)",  "(-7,254) (5,-444)", "(-3,317) (6,-254)"},
+            {"(-10,243) (2,-15)", "(-6,317) (1,-26)",  "(-3,113) (1,-43)", "(-6,313) (1,-32)"},
+            {"(-3,90) (2,-35)", "(-3,89) (1,-20)",  "(-2,99) (3,-10)", "(-2,90) (1,-14)"},
 
     };
 
     //Array of correct answers
-    private final String[] mCorrectAnswers = {"-10*x^(-11) + 30*x^9", "6*sin(2x) + 30*cos(3x)", "32*e^(4x) - 35*cos(7x)", "-8*x^(-2) + 90*x^8"};
+    private final String[] mCorrectAnswers = {"(-5,283) (2,-60)", "(-5,424) (4,-305)", "(-6,317) (1,-26)", "(-3,90) (2,-35)"};
 
 
     // method returns number of questions in list

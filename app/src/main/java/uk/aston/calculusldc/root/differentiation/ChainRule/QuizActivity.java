@@ -3,8 +3,10 @@ package uk.aston.calculusldc.root.differentiation.ChainRule;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,18 +35,27 @@ import uk.aston.calculusldc.root.differentiation.SearchFragment;
 public class QuizActivity extends AppCompatActivity
 {
 
-    private final QuestionBank mQuestionLibrary = new QuestionBank();
+    public QuizActivity(){
+
+    }
+
+    private final QuizInventory mQuestionLibrary = new QuizInventory();
 
     private TextView mScoreView;   // view for current total score
     private TextView mScoreTextView;
     private MTMathView mQuestionView;  //current question to answer
     private MTMathView mQuestionView1;  //current question to answer
+    private TextView mQuestionText;
     private Button mButtonChoice1; // multiple choice 1 for mQuestionView
     private Button mButtonChoice2; // multiple choice 2 for mQuestionView
     private Button mButtonChoice3; // multiple choice 3 for mQuestionView
     private Button mButtonChoice4; // multiple choice 4 for mQuestionView
 
+    Double score;
+
     private MTMathView mAnswerView;
+
+    int progressStatus = 100;
 
     private String mAnswer;  // correct answer for question in mQuestionView
     private int mScore = 0;  // current total score
@@ -56,11 +67,14 @@ public class QuizActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_chain_rule);
+        setContentView(R.layout.activity_quiz);
 
         mScoreView = findViewById(R.id.score);
         mQuestionView = findViewById(R.id.question);
         mScoreTextView = findViewById(R.id.score_text);
+
+        mQuestionText = findViewById(R.id.questionText);
+        mQuestionText.setText("Differentiate the following function with respect to x using the chain rule & select the correct answer.");
 
 
         mButtonChoice1 = findViewById(R.id.choice1);
@@ -125,6 +139,7 @@ public class QuizActivity extends AppCompatActivity
                         mScoreView.setVisibility(View.GONE);
                         mScoreTextView.setVisibility(View.GONE);
                         mQuestionView.setVisibility(View.GONE);
+                        mQuestionText.setVisibility(View.GONE);
                         mButtonChoice1.setVisibility(View.GONE);
                         mButtonChoice2.setVisibility(View.GONE);
                         mButtonChoice3.setVisibility(View.GONE);
@@ -180,7 +195,6 @@ public class QuizActivity extends AppCompatActivity
 
 
 
-
             Score score = new Score();
             score.setmTopic("Chain Rule");
 
@@ -190,10 +204,24 @@ public class QuizActivity extends AppCompatActivity
             score.setMscore(scoreDouble);
 
 
+            int highScore;
+
+            SharedPreferences mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = mPreferences.edit();
+
+            highScore = mPreferences.getInt("highScore",0);
+
+
             try
             {
-                mScoreViewModel.insert(score);
-                mScoreViewModel.update(score);
+
+
+                //if the score just achieved is higher than the high score, update it
+                if(scoreDouble >= highScore)
+                {
+                    mScoreViewModel.insert(score);
+                    mScoreViewModel.update(score);
+                }
                 Log.d(TAG,"insertion worked");
             }catch(SQLiteConstraintException e){
                 Log.d(TAG, "insertion failed");
@@ -237,7 +265,9 @@ public class QuizActivity extends AppCompatActivity
     public Double scoreStringtoDoubleConverter(String scoreString)
     {
         StringTokenizer tokenizer = new StringTokenizer(scoreString, "/");
-        Double score = Double.parseDouble(tokenizer.nextToken());
+        score = Double.parseDouble(tokenizer.nextToken());
+
+
 
         return score;
     }

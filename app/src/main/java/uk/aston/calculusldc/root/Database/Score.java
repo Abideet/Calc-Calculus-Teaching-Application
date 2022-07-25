@@ -36,6 +36,7 @@ public class Score {
 
     }
 
+    @Ignore
     public Score(@NonNull String topic, @NonNull double score)
     {
         this.mTopic = topic;

@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:text="@string/second_deriv_and_higher_deriv_title"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:textSize="30sp" />
 
 

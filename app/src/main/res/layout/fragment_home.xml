@@ -25,10 +25,12 @@
         android:textAllCaps="false"
         android:textSize="40sp"
         app:defaultNavHost="true"
+        android:backgroundTint="@color/astonPurple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation" />
+        app:navGraph="@navigation/mobile_navigation"
+         />
 
     <Button
         android:id="@+id/IntegrationButton"
@@ -38,11 +40,15 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="36dp"
         android:text="@string/integration_title"
+        android:backgroundTint="@color/astonPurple"
         android:textAllCaps="false"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DiffButton" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

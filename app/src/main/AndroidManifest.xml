@@ -68,10 +68,6 @@
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".root.differentiation.PartialDiff.HighestScoreActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
         <activity android:name=".root.differentiation.QuotientRule.QuotientRuleVidActivity"
             android:screenOrientation="portrait">
         </activity>

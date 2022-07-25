@@ -9,8 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Integration by Partial Fractions"
+        android:textColor="@color/astonPurple"
+        android:gravity="center_horizontal"
         android:textSize="30dp"
-        android:textStyle="bold" />
+         />
 
     <TextView
         android:layout_width="match_parent"

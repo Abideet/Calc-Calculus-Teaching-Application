@@ -162,7 +162,7 @@
         android:id="@+id/quizActivity"
         android:name="uk.aston.calculusldc.root.differentiation.ChainRule.QuizActivity"
         android:label="activity_quiz_chain_rule"
-        tools:layout="@layout/activity_quiz_chain_rule" />
+        tools:layout="@layout/activity_quiz" />
 
 
 </navigation>

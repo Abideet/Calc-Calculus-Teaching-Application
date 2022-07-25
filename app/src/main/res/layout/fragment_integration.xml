@@ -14,7 +14,7 @@
         android:text="@string/integration_title"
         android:layout_gravity="center"
         android:translationY="-300dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/astonPurple"
         android:textAllCaps="false"
         android:textSize="50sp" />
 
@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/introduction_to_integration"
+            android:backgroundTint="@color/astonPurple"
             android:textAllCaps="false"
             android:translationY="60dp" />
 
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/integration_by_substitution"
+            android:backgroundTint="@color/astonPurple"
             android:textAllCaps="false"
             android:translationY="120dp" />
 
@@ -49,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/integration_by_parts"
+            android:backgroundTint="@color/astonPurple"
             android:textAllCaps="false"
             android:translationY="180dp" />
 
@@ -58,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/integration_with_partial_fractions"
+            android:backgroundTint="@color/astonPurple"
             android:textAllCaps="false"
             android:translationY="240dp" />
 
@@ -67,6 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/integration_for_areas_and_volumes"
+            android:backgroundTint="@color/astonPurple"
             android:textAllCaps="false"
             android:translationY="300dp" />
 

@@ -1,4 +1,4 @@
-package uk.aston.calculusldc.root.differentiation.StatPointsFragment;
+package uk.aston.calculusldc.root.differentiation.ProductRule;
 
 // This class contains a list of questions
 
@@ -8,7 +8,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionBank
+public class QuizInventory
 {
 
     private Context context;
@@ -30,15 +30,15 @@ public class QuestionBank
 
     private final String[][] multipleChoice =
             {
-            {"-5,279","-8,300" ,  "10,270",  "-5,233"},
-            {"7,-396", "4,-296",  "2,296", "7,-116"},
-            {"4,-26", "3,-56",  "3,56", "8,-86"},
-            {"3,-89", "6,-99",  "7,-29", "1,89"},
+            {"sin(4x) + 4*(x + 1)*cos(4x)","(8x + 6)*cos(4*x^2 + 6x + 5)" ,  "cos(4*x^2 + 6x + 5)",  "sin(4*x^2 + 6x + 5)"},
+            {"5*(2*x^5 + 4)^(-0.5)*x^4", "x^7*e^(-4x)*(8 - 4x)",  "(3x + 5)^(-1.5)x^3", "(5x + 5)^(-2.5)x^3"},
+            {"-2*sin(2x)*sin(5x) + 5*cos(2x)*cos(5x)", "1.5*(6*x^4 + 2)^(-4.5)*x^3",  "5.5*(6*x^6 + 2)^(-1.5)*x^6", "5*(2*x^6 + 2)^(-0.5)*x^2"},
+            {"(4x + 9)*cos(2*x^2 + 9x + 8)", "3*sin(x) + (3x - 5)*cos(x)",  "(3x + 10)*sin(4*x^2 + 9x + 10)", "4*sin(2x) + (6x - 5)*cos(7x)"},
 
     };
 
     //Array of correct answers
-    private final String[] mCorrectAnswers = {"-5,279", "4,-296", "7.5*(5*x^3 + 2)^(-0.5)*x^2", "(4x + 9)*cos(2*x^2 + 9x + 8)"};
+    private final String[] mCorrectAnswers = {"sin(4x) + 4*(x + 1)*cos(4x)", "x^7*e^(-4x)*(8 - 4x)", "-2*sin(2x)*sin(5x) + 5*cos(2x)*cos(5x)", "3*sin(x) + (3x - 5)*cos(x)"};
 
 
     // method returns number of questions in list

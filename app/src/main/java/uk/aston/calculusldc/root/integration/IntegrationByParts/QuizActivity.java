@@ -41,7 +41,7 @@ public class QuizActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_chain_rule);
+        setContentView(R.layout.activity_quiz);
         // setup screen for the first question with four alternative to answer
         mScoreView = findViewById(R.id.score);
         mQuestionView = findViewById(R.id.question);

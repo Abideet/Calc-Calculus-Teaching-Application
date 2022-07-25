@@ -36,7 +36,7 @@ limitations under the License. -->
             android:layout_height="wrap_content"
             android:textSize="10sp"
             android:elevation="8dp"
-            android:backgroundTint="@color/blue_500"
+            android:backgroundTint="@color/astonPurple"
             android:layout_weight="0.44"
             />
 
@@ -48,7 +48,7 @@ limitations under the License. -->
             android:layout_height="wrap_content"
             android:layout_weight="0.57"
             android:textSize="10sp"
-            android:backgroundTint="#FF0000"
+            android:backgroundTint="@color/astonOrange"
             android:elevation="8dp"
             />
 

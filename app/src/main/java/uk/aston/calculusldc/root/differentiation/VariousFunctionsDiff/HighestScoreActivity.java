@@ -3,6 +3,7 @@ package uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -50,6 +51,7 @@ public class HighestScoreActivity extends AppCompatActivity {
         // use Shared preferences to save the best score
         SharedPreferences mypref = getPreferences(MODE_PRIVATE);
         int highscore = mypref.getInt("highscore",0);
+
         if(highscore>= score)
             highScore.setText("High score: "+highscore);
         else
@@ -60,6 +62,11 @@ public class HighestScoreActivity extends AppCompatActivity {
             editor.putInt("highscore", score);
             editor.commit();
         }
+
+        SharedPreferences mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor mEditor = mPreferences.edit();
+        mEditor.putInt("highScore", highscore);
+        mEditor.commit();
 
         //buttons
         repeat = findViewById(R.id.buttonRepeat);

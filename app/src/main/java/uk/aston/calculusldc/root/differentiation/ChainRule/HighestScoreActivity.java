@@ -39,6 +39,9 @@ public class HighestScoreActivity extends AppCompatActivity {
     Button repeat;
     Button back;
 
+    public int score;
+    public int highscore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,13 +58,18 @@ public class HighestScoreActivity extends AppCompatActivity {
         fragment.setVisibility(View.INVISIBLE);
 
         Intent intent = getIntent();
-        int score = intent.getIntExtra("score", 0);
+        score = intent.getIntExtra("score", 0);
         // display current score
         currentScore.setText("Your score: " + score);
 
+        //int highscore = Integer.parseInt(highScore.toString());
+
         // use Shared preferences to save the best score
         SharedPreferences mypref = getPreferences(MODE_PRIVATE);
-        int highscore = mypref.getInt("Chain Rule",0);
+        highscore = mypref.getInt("Chain Rule",0);
+
+
+
 
         if(highscore>= score)
             highScore.setText("High score: "+highscore);
@@ -70,6 +78,7 @@ public class HighestScoreActivity extends AppCompatActivity {
         {
             //update the highscore in shared pref
             highScore.setText("New highscore: "+score);
+            
 
             SharedPreferences.Editor editor = mypref.edit();
             editor.putInt("Chain Rule", score);
@@ -77,6 +86,11 @@ public class HighestScoreActivity extends AppCompatActivity {
 
 
         }
+
+        SharedPreferences mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor mEditor = mPreferences.edit();
+        mEditor.putInt("highScore", highscore);
+        mEditor.commit();
 
 
 
@@ -137,10 +151,6 @@ public class HighestScoreActivity extends AppCompatActivity {
 
     }
 
-    public static String getDefaults(String key, Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return preferences.getString(key, null);
-    }
 
     public void onRepeatClick(View view)
     {

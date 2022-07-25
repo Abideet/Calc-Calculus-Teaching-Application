@@ -9,8 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Introduction to Integration"
+        android:gravity="center_horizontal"
+        android:textColor="@color/astonPurple"
         android:textSize="30dp"
-        android:textStyle="bold" />
+         />
 
     <TextView
         android:layout_width="match_parent"
@@ -87,6 +89,7 @@ t
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="632dp"
+        android:backgroundTint="@color/astonPurple"
         android:text="Videos"
         android:translationY="560dp"
         app:layout_constraintBottom_toBottomOf="parent"

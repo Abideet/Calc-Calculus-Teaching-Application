@@ -40,7 +40,17 @@ android {
         }
     }
 
+    testOptions {
+        // Used for Unit testing Android dependent elements in /test folder
+        unitTests.includeAndroidResources  = true
+        unitTests.returnDefaultValues = true
+    }
+
+
+
 }
+
+
 
 
 ext {
@@ -104,12 +114,16 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.4.0'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
 
     androidTestImplementation 'com.android.support:support-annotations:27.1.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    testImplementation "com.google.truth:truth:1.0.1"
+    androidTestImplementation 'com.google.truth:truth:1.0.1'
+
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
