@@ -78,7 +78,7 @@ public class HighestScoreActivity extends AppCompatActivity {
         {
             //update the highscore in shared pref
             highScore.setText("New highscore: "+score);
-            
+
 
             SharedPreferences.Editor editor = mypref.edit();
             editor.putInt("Chain Rule", score);

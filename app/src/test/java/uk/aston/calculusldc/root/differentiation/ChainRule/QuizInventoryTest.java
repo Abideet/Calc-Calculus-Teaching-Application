@@ -21,14 +21,13 @@ public class QuizInventoryTest {
     @Test
     public void getLength() {
         int expectedOutput = 4;
-
-        assertEquals(expectedOutput, q.getLength());
+        int falseOutput = 5;
+        assertEquals(falseOutput, q.getLength());
     }
 
     @Test
     public void getChoice() {
         String expectedOutput = "5*(2*x^5 + 4)^(-0.5)*x^4";
-
         assertEquals(expectedOutput, q.getChoice(1, 1));
     }
 

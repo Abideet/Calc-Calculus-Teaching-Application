@@ -35,10 +35,6 @@ import uk.aston.calculusldc.root.differentiation.SearchFragment;
 public class QuizActivity extends AppCompatActivity
 {
 
-    public QuizActivity(){
-
-    }
-
     private final QuizInventory mQuestionLibrary = new QuizInventory();
 
     private TextView mScoreView;   // view for current total score
@@ -54,8 +50,6 @@ public class QuizActivity extends AppCompatActivity
     Double score;
 
     private MTMathView mAnswerView;
-
-    int progressStatus = 100;
 
     private String mAnswer;  // correct answer for question in mQuestionView
     private int mScore = 0;  // current total score
@@ -215,11 +209,12 @@ public class QuizActivity extends AppCompatActivity
             try
             {
 
+                mScoreViewModel.insert(score);
 
                 //if the score just achieved is higher than the high score, update it
                 if(scoreDouble >= highScore)
                 {
-                    mScoreViewModel.insert(score);
+
                     mScoreViewModel.update(score);
                 }
                 Log.d(TAG,"insertion worked");
@@ -234,8 +229,6 @@ public class QuizActivity extends AppCompatActivity
             startActivity(intent);
         }
     }
-
-
 
 
 

@@ -11,12 +11,6 @@ import java.util.List;
 public class QuizInventory
 {
 
-    private Context context;
-    Activity activity;
-
-    // declare list of Question objects
-    List <Question> list = new ArrayList<>();
-
 
     private final String [] questionNumbers =
             {
@@ -49,7 +43,8 @@ public class QuizInventory
     // method return a single multiple choice item for question based on list index,
     // based on number of multiple choice item in the list - 1, 2, 3 or 4
     // as an argument
-    public String getChoice(int index, int num) {
+    public String getChoice(int index, int num)
+    {
         //return list.get(index).getChoice(num-1);
         //num - 1 so index is not out of bounds
         String choice = mAnswers[index][num - 1];
@@ -57,12 +52,11 @@ public class QuizInventory
     }
 
     //  method returns correct answer for the question based on list index
-    public String getCorrectAnswer(int a) {
+    public String getCorrectAnswer(int a)
+    {
         //return list.get(a).getAnswer();
         String answer = mCorrectAnswers[a];
         return answer;
     }
-
-
 
 }

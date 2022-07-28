@@ -68,7 +68,7 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-analytics'
 
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation 'com.google.android.material:material:1.5.0'
 
     implementation  'com.android.support:multidex:1.0.0'
@@ -109,20 +109,22 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 
     //test dependencies
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation 'androidx.test:runner:1.4.0'
-    androidTestImplementation 'androidx.test:rules:1.4.0'
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+//    androidTestImplementation 'androidx.test:runner:1.4.0'
+//    androidTestImplementation 'androidx.test:rules:1.4.0'
+//    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+//
+//    androidTestImplementation 'com.android.support:support-annotations:27.1.1'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+//    androidTestImplementation 'com.android.support.test:rules:1.0.1'
+//    androidTestImplementation  "com.google.truth:truth:1.0.1"
+//    androidTestImplementation 'com.google.truth:truth:1.0.1'
 
-    androidTestImplementation 'com.android.support:support-annotations:27.1.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
-    testImplementation "com.google.truth:truth:1.0.1"
-    androidTestImplementation 'com.google.truth:truth:1.0.1'
+    androidTestImplementation "androidx.test:core:1.2.0-alpha03"
 
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
@@ -140,5 +142,18 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    // Testing
+    implementation "androidx.test:core:1.4.1-alpha04"
+
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    androidTestImplementation ("androidx.test.espresso:espresso-core:$rootProject.espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+
+
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+
 }
