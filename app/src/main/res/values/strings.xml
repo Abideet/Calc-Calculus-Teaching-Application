@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CalculusLDC</string>
     <string name="title_saved">Saved</string>
-    <string name="title_search">Search</string>
+    <string name="title_calculate">Interactive Diagrams</string>
     <string name="title_home">Home</string>
     <string name="differentiation_title">Differentiation</string>
     <string name="integration_title">Integration</string>
@@ -111,4 +111,29 @@
     <string name="integration_by_parts">Integration by Parts</string>
     <string name="integration_with_partial_fractions">Integration with Partial Fractions</string>
     <string name="integration_for_areas_and_volumes">Integration for Areas and Volumes</string>
+
+
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="times">*</string>
+    <string name="divide">/</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="inv">Inv</string>
+    <string name="hyp">Hyp</string>
+    <string name="sqrt">√</string>
+    <string name="pow">^</string>
+    <string name="log">log</string>
+    <string name="erf">erf</string>
+    <string name="eulero">e</string>
+    <string name="ln">ln</string>
+    <string name="pi">π</string>
+    <string name="ans">ans</string>
+    <string name="abss">abs</string>
+    <string name="rad">RAD</string>
+
+
+
 </resources>

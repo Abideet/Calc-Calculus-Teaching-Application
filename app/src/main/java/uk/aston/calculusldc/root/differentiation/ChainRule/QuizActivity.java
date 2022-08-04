@@ -29,12 +29,12 @@ import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
 import uk.aston.calculusldc.root.Database.Score;
 import uk.aston.calculusldc.root.Database.ScoreViewModel;
+import uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity;
 import uk.aston.calculusldc.root.differentiation.SavedFragment;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
+
 
 public class QuizActivity extends AppCompatActivity
 {
-
     private final QuizInventory mQuestionLibrary = new QuizInventory();
 
     private TextView mScoreView;   // view for current total score
@@ -103,25 +103,12 @@ public class QuizActivity extends AppCompatActivity
                 switch(item.getItemId())
                 {
 
-                    case R.id.searchFragment:
+                    case R.id.graphCalculateFragment:
 
-                        Fragment searchFragment = new SearchFragment();
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-                        transaction.replace(R.id.activity_quiz, searchFragment);
-                        transaction.addToBackStack(null);
-
-                        mScoreView.setVisibility(View.GONE);
-                        mScoreTextView.setVisibility(View.GONE);
-                        mQuestionView.setVisibility(View.GONE);
-                        mButtonChoice1.setVisibility(View.GONE);
-                        mButtonChoice2.setVisibility(View.GONE);
-                        mButtonChoice3.setVisibility(View.GONE);
-                        mButtonChoice4.setVisibility(View.GONE);
-
-                        transaction.commit();
-
+                        startActivity(new Intent(getApplicationContext(), InteractiveDiagramCalculatorActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
+
                     case R.id.savedFragment:
 
                         Fragment savedFragment = new SavedFragment();
@@ -185,9 +172,6 @@ public class QuizActivity extends AppCompatActivity
             mQuestionNumber++;
        }
         else {
-            Toast.makeText(QuizActivity.this, "It was the last question!", Toast.LENGTH_SHORT).show();
-
-
 
             Score score = new Score();
             score.setmTopic("Chain Rule");

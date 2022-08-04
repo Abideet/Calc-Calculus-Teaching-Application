@@ -16,7 +16,8 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
+import uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity;
+
 
 public class QuotientRuleVidActivity extends YouTubeBaseActivity
 {
@@ -142,8 +143,8 @@ public class QuotientRuleVidActivity extends YouTubeBaseActivity
 
                 switch(item.getItemId())
                 {
-                    case R.id.searchFragment:
-                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
+                    case R.id.graphCalculateFragment:
+                        startActivity(new Intent(getApplicationContext(), InteractiveDiagramCalculatorActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.homeFragment:

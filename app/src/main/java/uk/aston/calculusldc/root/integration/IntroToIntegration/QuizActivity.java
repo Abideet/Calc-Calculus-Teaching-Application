@@ -16,7 +16,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
+import uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity;
+
 
 public class QuizActivity extends AppCompatActivity
 {
@@ -73,8 +74,8 @@ public class QuizActivity extends AppCompatActivity
 
                 switch(item.getItemId())
                 {
-                    case R.id.searchFragment:
-                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
+                    case R.id.graphCalculateFragment:
+                        startActivity(new Intent(getApplicationContext(), InteractiveDiagramCalculatorActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.homeFragment:

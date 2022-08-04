@@ -101,7 +101,6 @@ public class SavedFragment extends Fragment {
 
             mScores.add(adapter.getScoreAtPosition(i));
 
-
         }
 
         //Set up score view model
@@ -110,7 +109,6 @@ public class SavedFragment extends Fragment {
 
         // Get all the journeys from the database
         // and associate them to the adapter.
-        //TODO - Update with lambda later
         mScoreViewModel.getAllJourneys().observe(getActivity(), new Observer<List<Score>>()
         {
             @Override

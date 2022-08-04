@@ -18,4 +18,13 @@
         <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
 
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryRed</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryRedDark</item>
+        <item name="colorAccent">@color/orange</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

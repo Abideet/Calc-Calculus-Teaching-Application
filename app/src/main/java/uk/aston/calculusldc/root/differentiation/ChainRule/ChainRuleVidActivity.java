@@ -1,25 +1,16 @@
 package uk.aston.calculusldc.root.differentiation.ChainRule;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatCallback;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.view.ActionMode;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -29,8 +20,6 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
-import uk.aston.calculusldc.root.differentiation.SavedFragment;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
 public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppCompatCallback
 {
@@ -67,7 +56,8 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
         //Video 1
         onInitializedListener1 = new YouTubePlayer.OnInitializedListener() {
             @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b)
+            {
 
                 //
                 youTubePlayer.loadVideo("bKY2EmmdkXo");
@@ -164,7 +154,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
                 switch(item.getItemId())
                 {
 
-                    case R.id.searchFragment:
+                    case R.id.graphCalculateFragment:
 //                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
 //                        overridePendingTransition(0,0);
 

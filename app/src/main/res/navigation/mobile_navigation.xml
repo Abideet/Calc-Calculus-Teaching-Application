@@ -54,11 +54,11 @@
             app:destination="@id/partialDiffFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="uk.aston.calculusldc.root.differentiation.SearchFragment"
+    <activity
+        android:id="@+id/graphCalculateFragment"
+        android:name="uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity"
         android:label="SearchFragment"
-        tools:layout="@layout/fragment_search"/>
+        tools:layout="@layout/activity_graph_main"/>
     <fragment
         android:id="@+id/savedFragment"
         android:name="uk.aston.calculusldc.root.differentiation.SavedFragment"

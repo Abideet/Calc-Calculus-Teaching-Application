@@ -16,7 +16,6 @@ import androidx.navigation.fragment.NavHostFragment;
 
 public class HomeFragment extends Fragment {
 
-    public ProgressBar pBar;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -33,6 +32,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+        //Home Screen Buttons
         Button diffButton = view.findViewById(R.id.DiffButton);
         diffButton.setOnClickListener(new View.OnClickListener(){
             @Override

@@ -20,10 +20,6 @@ public interface ScoreDao {
     @Query("DELETE from score_table")
     void deleteAll();
 
-    //delete journey by id
-//    @Query("DELETE FROM score_table WHERE journeyID = :journeyID")
-//    abstract void deleteByJourneyId(long journeyID);
-
     @Delete
     void deleteJourney(Score score);
 

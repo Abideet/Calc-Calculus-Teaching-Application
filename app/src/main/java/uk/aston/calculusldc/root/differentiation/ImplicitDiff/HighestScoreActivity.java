@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -22,8 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
 import uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleFragment;
-import uk.aston.calculusldc.root.differentiation.SavedFragment;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
 public class HighestScoreActivity extends AppCompatActivity
 {
@@ -75,7 +72,7 @@ public class HighestScoreActivity extends AppCompatActivity
         back = findViewById(R.id.buttonBack);
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment, R.id.searchFragment)
+                R.id.homeFragment, R.id.graphCalculateFragment)
                 .build();
 
         BottomNavigationView navView = findViewById(R.id.highScoreNav);
@@ -86,7 +83,7 @@ public class HighestScoreActivity extends AppCompatActivity
                 switch(item.getItemId())
                 {
 
-                    case R.id.searchFragment:
+                    case R.id.graphCalculateFragment:
                         fragment.setVisibility(View.VISIBLE);
                         currentScore.setVisibility(View.GONE);
                         highScore.setVisibility(View.GONE);

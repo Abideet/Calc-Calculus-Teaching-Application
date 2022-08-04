@@ -13,13 +13,6 @@ import java.math.BigInteger;
 @Entity(tableName = "score_table")
 public class Score {
 
-    //
-//    @PrimaryKey(autoGenerate = true)
-//    private int journeyID;
-
-
-
-
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "topic")

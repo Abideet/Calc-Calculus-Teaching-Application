@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -18,8 +16,6 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
-import uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleVidActivity;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
 public class ProductRuleVidActivity extends YouTubeBaseActivity
 {
@@ -79,7 +75,7 @@ public class ProductRuleVidActivity extends YouTubeBaseActivity
 
                 switch(item.getItemId())
                 {
-                    case R.id.searchFragment:
+                    case R.id.graphCalculateFragment:
 
 
                         return true;

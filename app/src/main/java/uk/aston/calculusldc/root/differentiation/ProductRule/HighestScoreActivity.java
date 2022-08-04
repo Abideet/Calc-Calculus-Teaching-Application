@@ -1,14 +1,9 @@
 package uk.aston.calculusldc.root.differentiation.ProductRule;
 
-import static android.content.ContentValues.TAG;
-
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,9 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,11 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
-import uk.aston.calculusldc.root.Database.Score;
-import uk.aston.calculusldc.root.Database.ScoreViewModel;
 import uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleFragment;
-import uk.aston.calculusldc.root.differentiation.SavedFragment;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
 
 public class HighestScoreActivity extends AppCompatActivity {
 
@@ -91,7 +80,7 @@ public class HighestScoreActivity extends AppCompatActivity {
         back = findViewById(R.id.buttonBack);
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment, R.id.searchFragment)
+                R.id.homeFragment, R.id.graphCalculateFragment)
                 .build();
 
         BottomNavigationView navView = findViewById(R.id.highScoreNav);
@@ -106,7 +95,7 @@ public class HighestScoreActivity extends AppCompatActivity {
                 switch(item.getItemId())
                 {
 
-                    case R.id.searchFragment:
+                    case R.id.graphCalculateFragment:
                         fragment.setVisibility(View.VISIBLE);
                         currentScore.setVisibility(View.GONE);
                         highScore.setVisibility(View.GONE);

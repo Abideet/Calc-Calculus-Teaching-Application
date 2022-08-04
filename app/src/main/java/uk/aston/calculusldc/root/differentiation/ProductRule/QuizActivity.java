@@ -29,8 +29,9 @@ import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
 import uk.aston.calculusldc.root.Database.Score;
 import uk.aston.calculusldc.root.Database.ScoreViewModel;
+import uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity;
 import uk.aston.calculusldc.root.differentiation.SavedFragment;
-import uk.aston.calculusldc.root.differentiation.SearchFragment;
+
 
 public class QuizActivity extends AppCompatActivity
 {
@@ -98,25 +99,10 @@ public class QuizActivity extends AppCompatActivity
                 switch(item.getItemId())
                 {
 
-                    case R.id.searchFragment:
-//                        startActivity(new Intent(getApplicationContext(), SearchFragment.class));
-//                        overridePendingTransition(0,0);
-                        Fragment searchFragment = new SearchFragment();
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    case R.id.graphCalculateFragment:
 
-                        transaction.replace(R.id.activity_quiz, searchFragment);
-                        transaction.addToBackStack(null);
-
-                        mScoreView.setVisibility(View.GONE);
-                        mScoreTextView.setVisibility(View.GONE);
-                        mQuestionView.setVisibility(View.GONE);
-                        mButtonChoice1.setVisibility(View.GONE);
-                        mButtonChoice2.setVisibility(View.GONE);
-                        mButtonChoice3.setVisibility(View.GONE);
-                        mButtonChoice4.setVisibility(View.GONE);
-
-                        transaction.commit();
-
+                        startActivity(new Intent(getApplicationContext(), InteractiveDiagramCalculatorActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.savedFragment:
 

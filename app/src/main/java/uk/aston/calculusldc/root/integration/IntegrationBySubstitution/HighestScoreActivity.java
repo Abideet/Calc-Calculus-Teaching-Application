@@ -53,7 +53,7 @@ public class HighestScoreActivity extends AppCompatActivity {
         back = findViewById(R.id.buttonBack);
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment, R.id.searchFragment)
+                R.id.homeFragment, R.id.graphCalculateFragment)
                 .build();
 
     }
