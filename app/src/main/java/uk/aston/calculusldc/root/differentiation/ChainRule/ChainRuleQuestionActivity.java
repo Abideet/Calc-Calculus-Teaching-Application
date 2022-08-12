@@ -238,8 +238,6 @@ public class ChainRuleQuestionActivity extends AppCompatActivity
         StringTokenizer tokenizer = new StringTokenizer(scoreString, "/");
         score = Double.parseDouble(tokenizer.nextToken());
 
-
-
         return score;
     }
 

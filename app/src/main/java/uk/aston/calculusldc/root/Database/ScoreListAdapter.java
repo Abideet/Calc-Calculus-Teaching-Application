@@ -18,7 +18,7 @@ import java.util.List;
 
 import uk.aston.calculusldc.R;
 
-//caches data and populates the RecyclerView with it
+//Populates the RecyclerView with cached data
 public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.ScoreViewHolder> implements Filterable
 {
     private final LayoutInflater mInflater;

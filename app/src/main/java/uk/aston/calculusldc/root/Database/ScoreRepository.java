@@ -35,7 +35,7 @@ public class ScoreRepository {
 
 
 
-    //inner class to score journey without blocking the UI thread
+    //inner class to insert score without blocking the UI thread
     private static class insertAsyncTask extends AsyncTask<Score, Void, Void> {
         private final ScoreDao mAsyncTaskDao;
 
