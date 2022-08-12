@@ -29,14 +29,10 @@ import com.agog.mathdisplay.MTMathView;
 
 import uk.aston.calculusldc.R;
 
-
-//diamond problem causing the
 public class ChainRuleFragment extends Fragment
 {
 
     private MTMathView mExampleView;
-
-
 
     public ChainRuleFragment(){
 
@@ -70,7 +66,7 @@ public class ChainRuleFragment extends Fragment
             public void onClick(View view)
             {
                 //NavHostFragment.findNavController(ChainRuleFragment.this).navigate(R.id.action_chainRuleFragment_to_startChainRuleQuizFragment);
-                Intent intent = new Intent(getActivity(), QuizActivity.class);
+                Intent intent = new Intent(getActivity(), ChainRuleQuestionActivity.class);
                 startActivity(intent);
 
             }
@@ -79,16 +75,6 @@ public class ChainRuleFragment extends Fragment
 
         Button vidButton = view.findViewById(R.id.vidButtonsChainRule);
 
-        //does not work and still diamond problem of needing to extend fragment and youtubeBaseActivity classes
-        //-> so transition from this fragment to an activity instead of ChainRuleQuizFragment
-//        vidButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent = new Intent(getActivity(), ChainRuleVidActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
         vidButton.setOnClickListener(new View.OnClickListener(){
             @Override

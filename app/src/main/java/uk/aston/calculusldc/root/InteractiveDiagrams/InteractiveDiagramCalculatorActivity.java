@@ -38,7 +38,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
     private TextView screen;
     private String screenGraphFormula = "";
     private int length = 1000;
-    private String[] expression = new String[length];
+    public String[] expression = new String[length];
     private int same = 0;
     private int deg = 0;
     private int inv = 0;
@@ -74,7 +74,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graph_main);
+        setContentView(R.layout.activity_calculator);
         screen = (TextView) findViewById(R.id.formulaView);
         layout1 = findViewById(R.id.column1);
         layout2 = findViewById(R.id.column2);
@@ -172,7 +172,8 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
         finish();
     }
 
-    public void enterKeyboardNumber_G(View v) {
+    public void enterKeyboardNumber(View v)
+    {
         Button button = (Button) v;
 
         // in case it precedes a constant
@@ -213,7 +214,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
 
 
     }
-    public void entryOperandFromKeyboard_G(View v) {
+    public void entryOperandFromKeyboard(View v) {
         Button button = (Button) v;
 
         if (typingNumber == 1 && parenthesisOpen == 0) {
@@ -298,7 +299,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
         screen.setText(screenGraphFormula);
 
     }
-    public void inputParenthesisClosed_G(View v) {
+    public void inputParenthesisClosed(View v) {
 
         if (typingNumber == 1 && same == 0 && parenthesisOpen == 0) {
             index++;
@@ -312,7 +313,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
         }
         screen.setText(screenGraphFormula);
     }
-    public void immissioneXOCostante_G(View v) {
+    public void inputXAndConstants(View v) {
         Button button = (Button) v;
         if (same == 1) {
             index--;
@@ -326,13 +327,13 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
         }
 
         if(index>=0){
-            boolean segueUnNumero=true;
+            boolean aNumberFollows=true;
             try{
                 Double.parseDouble(expression[index]);
             }catch(NumberFormatException e){
-                segueUnNumero=false;
+                aNumberFollows=false;
             }
-            if(segueUnNumero==true){
+            if(aNumberFollows==true){
                 index++;
                 expression[index]="*";
             }
@@ -522,24 +523,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
     }
 
 
-    public void grad_G(View view) {
-        Button button = (Button) view;
 
-        if (deg == 0) {
-            button.setText("DEG");
-            deg = 1;
-        } else if(deg == 1) {
-            button.setText("GRAD");
-            deg = 2;
-        } else{
-            button.setText("RAD");
-            deg=0;
-        }
-
-
-
-
-    }
     public void inverse(View view) {
         Button button = (Button) view;
 
@@ -611,7 +595,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
 
     }
 
-    public void drawGraph (View view){
+    public void calculatorToDiagram(View view){
      //eliminate excess operators (syntax check)
         if(index>=0){
             while(expression[index].equals("+") || expression[index].equals("-") || expression[index].equals("*") ||
@@ -646,7 +630,7 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
         String[] tempExpression = new String[length];
 
         //Constant substitution
-        tempExpression= Function.replaceConstants(0.0, expression,index+1);
+        tempExpression= Function.replaceConstantsWithJavaCode(0.0, expression,index+1);
 
         //Syntax check
         if(bracketsToClose >=0){
@@ -661,13 +645,13 @@ public class InteractiveDiagramCalculatorActivity extends AppCompatActivity {
             startActivity(intent);
 
         } catch (NumberFormatException e) {
-        screenGraphFormula = "Syntax error";
+        screenGraphFormula = "Syntax Error: Enter an equation first";
         screen.setText(screenGraphFormula);
     } catch (ArrayIndexOutOfBoundsException e) {
-        screenGraphFormula = "Syntax error";
+        screenGraphFormula = "Syntax Error: Enter an equation first";
         screen.setText(screenGraphFormula);
     }}else{
-            screenGraphFormula = "Syntax error";
+            screenGraphFormula = "Syntax Error: Enter an equation first";
             screen.setText(screenGraphFormula);
         }
         bracketsToClose =0;

@@ -1,4 +1,4 @@
-package uk.aston.calculusldc.root.differentiation.ChainRule;
+package uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +7,6 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatCallback;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.view.ActionMode;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -20,8 +16,10 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import uk.aston.calculusldc.MainActivity;
 import uk.aston.calculusldc.R;
+import uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity;
 
-public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppCompatCallback
+
+public class VariousFunctionsDiffVidActivity extends YouTubeBaseActivity
 {
 
     ImageButton b1;
@@ -36,31 +34,29 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
     private YouTubePlayer.OnInitializedListener onInitializedListener2;
     private YouTubePlayer.OnInitializedListener onInitializedListener3;
 
-
     @Override
     protected void onCreate(Bundle bundle)
     {
-
         super.onCreate(bundle);
+        setContentView(R.layout.activity_variousfuncvideo);
 
-        AppCompatDelegate delegate = AppCompatDelegate.create(this, this);
-        delegate.onCreate(bundle);
-        delegate.setContentView(R.layout.activity_chainrulevideo);
-
-
-        youtubeView1 = findViewById(R.id.yVideo1);
-        youtubeView2 = findViewById(R.id.yVideo2);
-        youtubeView3 = findViewById(R.id.yVideo3);
-
+        youtubeView1 = findViewById(R.id.yVideoVariousFunc);
+        youtubeView2 = findViewById(R.id.yVideoVariousFunc2);
+        youtubeView3 = findViewById(R.id.yVideoVariousFunc3);
 
         //Video 1
         onInitializedListener1 = new YouTubePlayer.OnInitializedListener() {
             @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b)
-            {
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                //chain rule youtube vid
+                //youTubePlayer.loadVideo("2Cx9LnoUexg");
 
                 //
-                youTubePlayer.loadVideo("bKY2EmmdkXo");
+                youTubePlayer.loadVideo("V_TZWroe4KQ");
+
+                //
+                //youTubePlayer.loadVideo("-QezMBY0Ndk");
+
             }
 
             @Override
@@ -69,7 +65,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
             }
         };
 
-        b1 = findViewById(R.id.button1);
+        b1 = findViewById(R.id.buttonVariousFunc);
         b1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
@@ -88,7 +84,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
                 //youTubePlayer.loadVideo("2Cx9LnoUexg");
 
                 //
-                youTubePlayer.loadVideo("2Cx9LnoUexg");
+                youTubePlayer.loadVideo("wNXOyFg5S6U");
 
                 //
                 //youTubePlayer.loadVideo("-QezMBY0Ndk");
@@ -101,7 +97,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
             }
         };
 
-        b2 = findViewById(R.id.button2);
+        b2 = findViewById(R.id.buttonVariousFunc2);
         b2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
@@ -111,7 +107,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
         });
 
 
-        //Video3
+        //Video2
         onInitializedListener3 = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b)
@@ -120,7 +116,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
                 //youTubePlayer.loadVideo("2Cx9LnoUexg");
 
                 //
-                youTubePlayer.loadVideo("HjddQzdcSek");
+                youTubePlayer.loadVideo("S9FiR08xPOI");
 
                 //
                 //youTubePlayer.loadVideo("-QezMBY0Ndk");
@@ -133,7 +129,7 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
             }
         };
 
-        b3 = findViewById(R.id.button3);
+        b3 = findViewById(R.id.buttonVariousFunc3);
         b3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
@@ -142,9 +138,9 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
             }
         });
 
-        BottomNavigationView navView = findViewById(R.id.chainRuleNav);
+        BottomNavigationView navView = findViewById(R.id.varFuncNav);
 
-        navView.setSelectedItemId(R.id.homeFragment);
+        //navView.setSelectedItemId(R.id.homeFragment);
 
         // Perform item selected listener
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -153,84 +149,23 @@ public class ChainRuleVidActivity extends YouTubeBaseActivity implements AppComp
 
                 switch(item.getItemId())
                 {
-
                     case R.id.graphCalculateFragment:
-
-
-                        return true;
-                    case R.id.savedFragment:
-
-
-
-                        youtubeView1.setVisibility(View.GONE);
-                        youtubeView2.setVisibility(View.GONE);
-                        youtubeView3.setVisibility(View.GONE);
-                        b1.setVisibility(View.GONE);
-                        b2.setVisibility(View.GONE);
-                        b3.setVisibility(View.GONE);
-
+                        startActivity(new Intent(getApplicationContext(), InteractiveDiagramCalculatorActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.homeFragment:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-
                 }
+
                 return false;
             }
         });
 
-    }
-
-    @Override
-    public void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    public void onPostResume() {
-        super.onPostResume();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
 
 
-
-
-
-
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 
-    @Override
-    public void onSupportActionModeStarted(ActionMode mode) {
-
-    }
-
-    @Override
-    public void onSupportActionModeFinished(ActionMode mode) {
-
-    }
-
-    @Nullable
-    @Override
-    public ActionMode onWindowStartingSupportActionMode(ActionMode.Callback callback) {
-        return null;
-    }
 }

@@ -12,24 +12,11 @@ import java.util.List;
 
 @Dao
 public interface ScoreDao {
-
-    //Called when a Journey is inserted inside the room db
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Score score);
 
-    @Query("DELETE from score_table")
-    void deleteAll();
-
-    @Delete
-    void deleteJourney(Score score);
-
-    //change from array
-    @Query("SELECT * from score_table LIMIT 1")
-    Score[] getAnyJourney();
-
-    //order table by the date
     @Query("SELECT * from score_table ORDER BY score ASC")
-    LiveData<List<Score>> getAllJourneys();
+    LiveData<List<Score>> getAllScores();
 
     @Update
     void update(Score... score);

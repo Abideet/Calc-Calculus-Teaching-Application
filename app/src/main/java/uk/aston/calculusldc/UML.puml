@@ -1,27 +1,408 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+'Database
+interface ScoreDao{
+    void insert()
+    void deleteJourney()
+    void deleteJourney()
+    LiveData<List<Score>> getAllJourneys()
+    void update(Score score)
+}
+abstract class ScoreRoomDatabase{
+    ScoreRoomDatabase INSTANCE
+    ScoreRoomDatabase getDatabase()
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
+}
+class Score{
+    String topic
+    String score
+    double getMscore()
+    void setMscore()
+    String getmTopic()
+    void setmTopic()
+}
+class ScoreListAdapter{
+    LayoutInflater mInflater
+    List<Score> mScoresList
+    ScoreViewHolder onCreateViewHolder()
+    void onBindViewHolder(@NonNull ScoreViewHolder holder, int position)
+    void setmScoresList(List<Score> scores)
+    int getItemCount()
+    Score getScoreAtPosition(int position)
+    void publishResults(CharSequence constraint, FilterResults results)
 
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+}
+class ScoreViewModel{
+    ScoreRepository mRepository
+    LiveData<List<Score>> mAllScores
+    LiveData<List<Score>> getAllScores()
+    insert(Score score)
+    update(Score score)
+}
+class ScoreRepository
+{
+    ScoreDao mScoreDao
+    LiveData<List<Score>> mAllScores
+    LiveData<List<Score>> getmAllScores()
+    void insert(Score score)
+    void update(Score score)
+    void deleteJourney(Score score)
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+ScoreRoomDatabase o-- ScoreDao
+ScoreRoomDatabase o-- ScoreRepository
+ScoreRepository o-- ScoreDao
+ScoreViewModel *-- ScoreRepository
+ScoreListAdapter o-- Score
+
+'Differentiation
+class ChainRuleBestScoreActivity{
+    public int score;
+    public int highscore
+    void onRepeatClick(View view)
+
+}
+class ChainRuleFragment{
+    MTMathView mExampleView;
+}
+class ChainRuleQuizInventory{
+    String [] questionNumbers
+    String[][] answers
+    String[] correctAnswers
+    int getLength()
+    String getChoice(int index, int num)
+    String getCorrectAnswer(int a)
+}
+class ChainRuleQuestionActivity{
+    ChainRuleQuizInventory mQuestionLibrary
+    String mAnswer
+    int mScore
+    int mQuestionNumber
+    ScoreViewModel mScoreViewModel
+    void updateQuestion()
+    void updateScore(int point)
+    void onClick(View view)
+    Double scoreStringtoDoubleConverter(String scoreString)
+
+}
+class ChainRuleVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
 }
 
+class ImplicitDiffBestScoreActivity{
+        public int score;
+        public int highscore
+        void onRepeatClick(View view)
+}
+class ImplicitDiffFragment
+class ImplicitDiffQuestionActivity{
+    ImplicitDiffQuizInventory mQuestionLibrary
+    String mAnswer
+    int mScore
+    int mQuestionNumber
+    ScoreViewModel mScoreViewModel
+    void updateQuestion()
+    void updateScore(int point)
+    void onClick(View view)
+    Double scoreStringtoDoubleConverter(String scoreString)
+}
+class ImplicitDiffQuizInventory{
+    String [] questionNumbers
+    String[][] answers
+    String[] correctAnswers
+    int getLength()
+    String getChoice(int index, int num)
+    String getCorrectAnswer(int a)
+}
+class ImplicitDiffVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
+
+class PartialDiffFragment
+{
+    MTMathView mExampleView;
+}
+class PartialDiffVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
+
+class PartialDiffQuizInventory{
+    String [] questionNumbers
+    String[][] answers
+    String[] correctAnswers
+    int getLength()
+    String getChoice(int index, int num)
+    String getCorrectAnswer(int a)
+}
+
+class ProductRuleBestScoreActivity{
+        public int score;
+        public int highscore
+        void onRepeatClick(View view)
+}
+class ProductRuleFragment
+class ProductRuleQuestionActivity{
+   ProductRuleQuizInventory mQuestionLibrary
+   String mAnswer
+   int mScore
+   int mQuestionNumber
+   ScoreViewModel mScoreViewModel
+   void updateQuestion()
+   void updateScore(int point)
+   void onClick(View view)
+   Double scoreStringtoDoubleConverter(String scoreString)
+}
+class ProductRuleQuizInventory{
+    String [] questionNumbers
+    String[][] answers
+    String[] correctAnswers
+    int getLength()
+    String getChoice(int index, int num)
+    String getCorrectAnswer(int a)
+}
+class ProductRuleVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
+
+class QuotientRuleBestScoreActivity{
+        public int score;
+        public int highscore
+        void onRepeatClick(View view)
+}
+class QuotientRuleFragment
+class QuotientRuleQuestionActivity{
+   QuotientRuleQuizInventory mQuestionLibrary
+   String mAnswer
+   int mScore
+   int mQuestionNumber
+   ScoreViewModel mScoreViewModel
+   void updateQuestion()
+   void updateScore(int point)
+   void onClick(View view)
+   Double scoreStringtoDoubleConverter(String scoreString)
+
+}
+class QuotientRuleQuizInventory{
+    String [] questionNumbers
+    String[][] answers
+    String[] correctAnswers
+    int getLength()
+    String getChoice(int index, int num)
+    String getCorrectAnswer(int a)
+}
+class QuotientRuleVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
+
+class StatPointsBestScoreActivity{
+    public int score;
+    public int highscore
+    void onRepeatClick(View view)
+}
+class StatPointsFragment{
+    MTMathView mExampleView;
+}
+class StatPointsQuestionActivity{
+   StatPointsQuizInventory mQuestionLibrary
+   String mAnswer
+   int mScore
+   int mQuestionNumber
+   ScoreViewModel mScoreViewModel
+   void updateQuestion()
+   void updateScore(int point)
+   void onClick(View view)
+   Double scoreStringtoDoubleConverter(String scoreString)
+}
+class StatPointsQuizInventory{
+    String [] questionNumbers
+    String[][] answers
+    String[] correctAnswers
+    int getLength()
+    String getChoice(int index, int num)
+    String getCorrectAnswer(int a)
+}
+class StatPointsVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
+
+class VariousFunctionsDiffBestScoreActivity{
+        public int score;
+        public int highscore
+        void onRepeatClick(View view)
+}
+class VariousFunctionsDiffFragment{
+    MTMathView mExampleView;
+}
+class VariousFunctionsDiffQuestionActivity{
+   VariousFunctionsQuizInventory mQuestionLibrary
+   String mAnswer
+   int mScore
+   int mQuestionNumber
+   ScoreViewModel mScoreViewModel
+   void updateQuestion()
+   void updateScore(int point)
+   void onClick(View view)
+   Double scoreStringtoDoubleConverter(String scoreString)
+
+}
+class VariousFunctionsDiffQuizInventory{
+    String [] questionNumbers
+    String[][] answers
+    String[] correctAnswers
+    int getLength()
+    String getChoice(int index, int num)
+    String getCorrectAnswer(int a)
+}
+class VariousFunctionsDiffVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
+
+class DifferentiationFragment{
+    MTMathView mExampleView;
+}
+class IntroToDifferentiationFragment{
+    MTMathView mExampleView;
+}
+
+class SecondDeriv
+
+ChainRuleQuestionActivity o-- Score
+ChainRuleQuestionActivity o-- ScoreViewModel
+
+ImplicitDiffQuestionActivity o-- Score
+ImplicitDiffQuestionActivity o-- ScoreViewModel
+
+ProductRuleQuestionActivity o-- Score
+ProductRuleQuestionActivity o-- ScoreViewModel
+
+QuotientRuleQuestionActivity o-- Score
+QuotientRuleQuestionActivity o-- ScoreViewModel
+
+StatPointsQuestionActivity o-- Score
+StatPointsQuestionActivity o-- ScoreViewModel
+
+VariousFunctionsDiffQuestionActivity o-- Score
+VariousFunctionsDiffQuestionActivity o-- ScoreViewModel
+
+
+
+
+
+'Saved Screen
+class SavedFragment{
+ScoreViewModel mScoreViewModel
+ScoreListAdapter adapter
+List<Score> mScores
+}
+
+
+SavedFragment "1" o-- "1" ScoreListAdapter
+SavedFragment "1" o-- "1" ScoreViewModel
+SavedFragment "1" o-- "many" Score
+
+class MainActivity
+class HomeFragment
+
+'Interactive Diagrams
+class Function{
+    int index
+    int resultIndex
+    int stackCounter
+    int stop
+    String[] stack
+    String[] result
+    String[] convertString(String[] expression, int length)
+    double resolveMathamaticalExpression(String[] expression, int length, int deg)
+    String[] replaceX(double valueOfX, String[] expression, int length)
+    String[] replaceConstantsWithJavaCode(double ans, String[] expression, int length)
+    double[] createGraphicValues(int numberOfSamples, String[] expression, int length, double minX, double maxX, int deg)
+    double errorFunc(double z)
+    double erorFunc1(double z)
+    double errorFunc2(double z)
+    double invErrorFunc(double x)
+}
+class InteractiveDiagramActivity{
+    GraphView graph
+    double minX
+    double maxX
+    String[] expression
+    double[] function
+    LineGraphSeries<DataPoint> series
+    String[] makeTheFunctionReadable(String[] expression, int length)
+
+}
+class InteractiveDiagramCalculatorActivity{
+    String[] expression
+    int same
+    int inv
+    int hyp
+    int typingNumber
+    int parenthesisOpen
+    int parenthesisClosed
+    void startCalculator (View view)
+    void enterKeyboardNumber(View v)
+    void entryOperandFromKeyboard(View v)
+    void enteringOpenParentheses(View v)
+    void inputParenthesisClosed(View v)
+    void inputXAndConstants(View v)
+    void inputUnaryOperand(View v)
+    void delete(View v)
+    void inverse(View view)
+    void hyperbolic(View view)
+    void calculatorToDiagram(View view)
+}
+
+InteractiveDiagramActivity o-- Function
+InteractiveDiagramCalculatorActivity o-- Function
+
+
+'Integration
+class IntegrationByPartsFragment{
+    MTMathView mExampleView;
+    MTMathView mExampleView2;
+    MTMathView mExampleView3;
+    MTMathView mExampleView4;
+    MTMathView mExampleView5;
+}
+class IntegrationByPartsVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
+
+class IntegrationBySubstitutionVidActivity{
+    YouTubePlayerView youtubeView1;
+}
+class IntregrationBySubstitutionFragment{
+    MTMathView mExampleView;
+    MTMathView mExampleView2;
+    MTMathView mExampleView3;
+    MTMathView mExampleView4;
+    MTMathView mExampleView5;
+}
+
+class IntroToIntegrationFragment{
+    MTMathView mExampleView;
+    MTMathView mExampleView2;
+}
+class IntroToIntegrationVidActivity{
+    YouTubePlayerView youtubeView1;
+    YouTubePlayerView youtubeView2;
+    YouTubePlayerView youtubeView3;
+}
 @enduml

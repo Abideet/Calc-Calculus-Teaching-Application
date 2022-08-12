@@ -8,19 +8,15 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.util.List;
 
-import uk.aston.calculusldc.LiveDataTestUtil;
-import uk.aston.calculusldc.root.Database.MyRoomDatabase;
+import uk.aston.calculusldc.root.Database.ScoreRoomDatabase;
 import uk.aston.calculusldc.root.Database.Score;
 import uk.aston.calculusldc.root.Database.ScoreDao;
 
@@ -37,14 +33,14 @@ public class ScoreDaoTest {
     public InstantTaskExecutorRule executorRule = new InstantTaskExecutorRule();
 
     private ScoreDao mScoreDao;
-    private MyRoomDatabase mDb;
+    private ScoreRoomDatabase mDb;
 
     @Before
     public void createDb() throws Exception {
         Context context = ApplicationProvider.getApplicationContext();
         // Using an inMemoryDatabaseBuilder because the information stored here disappears when the
         // process is killed.
-        mDb = Room.inMemoryDatabaseBuilder(context, MyRoomDatabase.class)
+        mDb = Room.inMemoryDatabaseBuilder(context, ScoreRoomDatabase.class)
                 // Allowing main thread queries, just for testing.
                 .allowMainThreadQueries()
                 .build();
@@ -63,7 +59,7 @@ public class ScoreDaoTest {
         double delta =.1;
         Score score = new Score("Chain Rule", 0);
         mScoreDao.insert(score);
-        List<Score> allScores = LiveDataTestUtil.getValue(mScoreDao.getAllJourneys());
+        List<Score> allScores = LiveDataTestUtil.getValue(mScoreDao.getAllScores());
         assertEquals(allScores.get(0).getMscore(), score.getMscore(), delta);
     }
 
@@ -72,17 +68,12 @@ public class ScoreDaoTest {
     }
 
     @Test
-    public void deleteJourney() {
+    public void getAnyScore() {
 
     }
 
     @Test
-    public void getAnyJourney() {
-
-    }
-
-    @Test
-    public void getAllJourneys() {
+    public void getAllScores() {
 
     }
 

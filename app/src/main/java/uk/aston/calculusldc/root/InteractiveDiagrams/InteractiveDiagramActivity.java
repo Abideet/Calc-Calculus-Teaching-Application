@@ -21,31 +21,32 @@ import uk.aston.calculusldc.root.differentiation.SavedFragment;
 
 public class InteractiveDiagramActivity extends AppCompatActivity {
 
-    int samples = 1300;
+    GraphView graph;
     double minX = -8.1;
     double maxX = 8.1;
-    String[] espressione;
+    String[] expression;
     int deg, length;
     double[] function;
+    int samples = 1300;
     LineGraphSeries<DataPoint> series;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graph_visual);
+        setContentView(R.layout.activity_interactive_diagram);
 
         //The intent is captured and the necessary variables initialized
         Intent intent = getIntent();
-        espressione = intent.getStringArrayExtra(InteractiveDiagramCalculatorActivity.EXTRA_FUNCTION);
+        expression = intent.getStringArrayExtra(InteractiveDiagramCalculatorActivity.EXTRA_FUNCTION);
         deg = intent.getIntExtra(InteractiveDiagramCalculatorActivity.EXTRA_DEG,0);
         length = intent.getIntExtra(InteractiveDiagramCalculatorActivity.EXTRA_LENGTH,0)+1;
-        String[] tempEspressione = makeTheFunctionReadable(espressione,length);
+        String[] tempExpression = makeTheFunctionReadable(expression,length);
 
         //The function values are generated
-        function = Function.createGraphicValues(samples, tempEspressione, length, minX, maxX, deg);
+        function = Function.createGraphicValues(samples, tempExpression, length, minX, maxX, deg);
 
-        //Graph defined
-        GraphView graph = (GraphView) findViewById(R.id.graph);
+        //Graph initialized
+        graph = (GraphView) findViewById(R.id.graph);
         series = new LineGraphSeries<DataPoint>();
         DataPoint[] dati = new DataPoint[samples];
 

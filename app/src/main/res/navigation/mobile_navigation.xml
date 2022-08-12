@@ -58,7 +58,7 @@
         android:id="@+id/graphCalculateFragment"
         android:name="uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity"
         android:label="SearchFragment"
-        tools:layout="@layout/activity_graph_main"/>
+        tools:layout="@layout/activity_calculator"/>
     <fragment
         android:id="@+id/savedFragment"
         android:name="uk.aston.calculusldc.root.differentiation.SavedFragment"
@@ -71,7 +71,7 @@
         tools:layout="@layout/fragment_intro_to_differentiation" />
     <fragment
         android:id="@+id/variousFunctionsDifFragment"
-        android:name="uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff.VariousFunctionsDifFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.VariousFunctionsDiff.VariousFunctionsDiffFragment"
         android:label="fragment_various_functions_dif"
         tools:layout="@layout/fragment_various_functions_dif" />
     <fragment
@@ -81,7 +81,7 @@
         tools:layout="@layout/fragment_second_deriv" />
     <fragment
         android:id="@+id/statPointsFragment"
-        android:name="uk.aston.calculusldc.root.differentiation.StatPointsFragment.StatPointsFragment"
+        android:name="uk.aston.calculusldc.root.differentiation.StatPoints.StatPointsFragment"
         android:label="fragment_stat_points"
         tools:layout="@layout/fragment_stat_points" />
     <fragment
@@ -160,7 +160,7 @@
     </activity>
     <activity
         android:id="@+id/quizActivity"
-        android:name="uk.aston.calculusldc.root.differentiation.ChainRule.QuizActivity"
+        android:name="uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleQuestionActivity"
         android:label="activity_quiz_chain_rule"
         tools:layout="@layout/activity_quiz" />
 

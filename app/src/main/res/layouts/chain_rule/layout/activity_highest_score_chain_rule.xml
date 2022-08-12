@@ -5,7 +5,7 @@
     android:id="@+id/activity_highest_score"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.aston.calculusldc.root.differentiation.ChainRule.HighestScoreActivity">
+    tools:context="uk.aston.calculusldc.root.differentiation.ChainRule.ChainRuleBestScoreActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -46,19 +46,9 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:onClick="onRepeatClick"
             android:text="repeat quiz"
-            android:translationX="-40dp"
-            app:srcCompat="@mipmap/tryagain" />
+            android:translationX="-120dp"
+            android:translationY="130dp" />
 
-        <Button
-            android:id="@+id/buttonBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:onClick="onBackClick"
-            android:text="back to calculus screen"
-            android:translationX="60dp"
-            app:srcCompat="@mipmap/tryagain" />
 
 
     </LinearLayout>

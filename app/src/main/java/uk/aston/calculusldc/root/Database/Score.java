@@ -36,21 +36,6 @@ public class Score {
         this.mScore = score;
 
     }
-    /*
-     * This constructor is annotated using @Ignore, because Room expects only
-     * one constructor by default in an entity class.
-     */
-
-//    @Ignore
-//    public Score(int id, @NonNull String topic , @NonNull double score)
-//    {
-//        this.journeyID = id;
-//        this.mScore = score;
-//    }
-
-//    public int getJourneyID() {
-//        return journeyID;
-//    }
 
 
     public double getMscore() {
@@ -66,15 +51,6 @@ public class Score {
     {
         return mTopic;
     }
-
-
-//    public int getLocationID() {return journeyID;}
-
-//
-//    public void setJourneyID(int id)
-//    {
-//        this.journeyID = id;
-//    }
 
 
 

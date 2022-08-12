@@ -12,23 +12,19 @@ public class ScoreViewModel extends AndroidViewModel
 {
     private final ScoreRepository mRepository;
 
-    private final LiveData<List<Score>> mAllJourneys;
+    private final LiveData<List<Score>> mAllScores;
 
     public ScoreViewModel(Application application)
     {
         super(application);
         mRepository = new ScoreRepository(application);
-        mAllJourneys = mRepository.getmAllJourneys();
+        mAllScores = mRepository.getmAllScores();
     }
 
-    public LiveData<List<Score>> getAllJourneys() { return mAllJourneys; }
+    public LiveData<List<Score>> getAllScores() { return mAllScores; }
 
     //wrapper insert method hides the repositories insert method from the UI
     public void insert(Score score) { mRepository.insert(score); }
-
-    public void deleteAll() {mRepository.deleteAll();}
-
-    public void deleteJourney(Score score){ mRepository.deleteJourney(score); }
 
     public void update(Score score)
     {

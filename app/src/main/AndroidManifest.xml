@@ -20,9 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculusLDC">
-        <activity
-            android:name=".root.differentiation.SearchActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -36,28 +34,28 @@
             android:name=".root.differentiation.ChainRule.ChainRuleVidActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.ChainRule.QuizActivity"
+            android:name=".root.differentiation.ChainRule.ChainRuleQuestionActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.ChainRule.HighestScoreActivity"
+            android:name=".root.differentiation.ChainRule.ChainRuleBestScoreActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".root.differentiation.ProductRule.ProductRuleVidActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.ProductRule.QuizActivity"
+            android:name=".root.differentiation.ProductRule.ProductRuleQuestionActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.ProductRule.HighestScoreActivity"
+            android:name=".root.differentiation.ProductRule.ProductRuleBestScoreActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".root.differentiation.ImplicitDiff.ImplicitDiffVidActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.ImplicitDiff.QuizActivity"
+            android:name=".root.differentiation.ImplicitDiff.ImplicitDiffQuestionActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.ImplicitDiff.HighestScoreActivity"
+            android:name=".root.differentiation.ImplicitDiff.ImplicitDiffBestScoreActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".root.differentiation.PartialDiff.PartialDiffVidActivity"
@@ -66,28 +64,28 @@
             android:name=".root.differentiation.QuotientRule.QuotientRuleVidActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.QuotientRule.QuizActivity"
+            android:name=".root.differentiation.QuotientRule.QuotientRuleQuestionActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.QuotientRule.HighestScoreActivity"
+            android:name=".root.differentiation.QuotientRule.QuotientRuleBestScoreActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.StatPointsFragment.StatPointsVidActivity"
+            android:name=".root.differentiation.StatPoints.StatPointsVidActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.StatPointsFragment.QuizActivity"
+            android:name=".root.differentiation.StatPoints.StatPointsQuestionActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.StatPointsFragment.HighestScoreActivity"
+            android:name=".root.differentiation.StatPoints.StatPointsBestScoreActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.VariousFunctionsDiff.VariousFuncVidActivity"
+            android:name=".root.differentiation.VariousFunctionsDiff.VariousFunctionsDiffVidActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.VariousFunctionsDiff.QuizActivity"
+            android:name=".root.differentiation.VariousFunctionsDiff.VariousFunctionsDiffQuestionActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".root.differentiation.VariousFunctionsDiff.HighestScoreActivity"
+            android:name=".root.differentiation.VariousFunctionsDiff.VariousFunctionsDiffBestScoreActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".root.integration.IntroToIntegration.IntroToIntegrationVidActivity"

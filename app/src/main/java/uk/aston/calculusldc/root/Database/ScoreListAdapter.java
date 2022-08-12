@@ -23,18 +23,11 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
 {
     private final LayoutInflater mInflater;
 
-    // Cached copy of journeys that will be filtered
     private List<Score> mScoresList;
 
-    // Copy of unfiltered list
     private List<Score> mScoresListFull;
 
     private static ClickListener clickListener;
-
-    public ScoreListAdapter(Context context)
-    {
-        mInflater = LayoutInflater.from(context);
-    }
 
 
     public ScoreListAdapter(List<Score> mScores, Context context)
@@ -54,10 +47,7 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
     public ScoreViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
 
-        //change the layout later to one that better displays the journey
         View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
-
-
 
 
         return new ScoreViewHolder(itemView);
@@ -81,19 +71,6 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
         {
             Score current = mScoresList.get(position);
 
-            //thought the parameter for setText was a reference to the xml e.g., findViewById(R.id.var)
-            //without the "", setText gets a reference as Tony said
-            //NOTE: Maybe thats why the recycler view value is 60 and += 4 everytime
-            //69
-            //73
-            //74
-            //went up to 76
-            //maybe its storing the different runs and this is the list of the different runs
-
-            //holder.topicNameItemView.setText(""+current.getJourneyID());
-
-            //double distance = truncate(current.getMscore());
-
             holder.topicNameItemView.setText(current.getmTopic());
 
 
@@ -107,17 +84,6 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
 
     }
 
-    //Method to shorten distance to 2 decimal places
-    static double truncate(double distance)
-    {
-
-        distance = distance * Math.pow(10, 2);
-        distance = Math.floor(distance);
-        distance = distance / Math.pow(10, 2);
-
-        return distance;
-    }
-
 
 
     public void setmScoresList(List<Score> scores)
@@ -126,8 +92,6 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
         notifyDataSetChanged();
     }
 
-    // getItemCount() is called many times, and when it is first called,
-    // mWords has not been updated (means initially, it's null, and we can't return null).
     @Override
     public int getItemCount()
     {
@@ -153,41 +117,22 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
         private ScoreViewHolder(View itemView)
         {
             super(itemView);
-            //wordItemView = itemView.findViewById(R.id.textView);
             scoreItem = itemView.findViewById(R.id.textView);
             topicNameItemView = itemView.findViewById(R.id.textTopicName);
             scoreValueItemView = itemView.findViewById(R.id.textScore);
-
-
-            //Click listener if you want button to take the user somewhere
-//            itemView.setOnClickListener(new View.OnClickListener()
-//            {
-//                @Override
-//                public void onClick(View v)
-//                {
-//                    Log.d("clicked", "itemClicked");
-//                    clickListener.onItemClick(v, getAdapterPosition());
-//                }
-//            });
-
 
 
             Log.i("ADAPTER", topicNameItemView.toString());
         }
     }
 
-    public void filterList(ArrayList<Score> filteredList)
-    {
-        mScoresList = filteredList;
-        notifyDataSetChanged();
-    }
 
     @Override
     public Filter getFilter() {
-        return journeyFilter;
+        return scoreFilter;
     }
 
-    private final Filter journeyFilter = new Filter()
+    private final Filter scoreFilter = new Filter()
     {
         @Override
         protected FilterResults performFiltering(CharSequence searchFilter)
@@ -198,7 +143,6 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
             //if the input field is empty
             if (searchFilter == null || searchFilter.length() == 0)
             {
-                //Show all journeys in the list
                 filteredScoreList.addAll(mScoresListFull);
             } else
                 {
@@ -207,7 +151,6 @@ public class ScoreListAdapter extends RecyclerView.Adapter<ScoreListAdapter.Scor
 
                 //Loop through each journey in journey list
                 for (Score score : mScoresListFull) {
-                    //TODO: Change to journey name and allow user to set that
                     if (score.getmTopic().toLowerCase().contains(stringFilter)) {
                         filteredScoreList.add(score);
                     }

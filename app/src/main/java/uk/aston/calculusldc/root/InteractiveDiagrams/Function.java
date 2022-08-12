@@ -5,11 +5,10 @@ package uk.aston.calculusldc.root.InteractiveDiagrams;
 
 public class Function {
 
-    public static String[] convertToRPNlv2 (String[] expression,int length){
+    public static String[] convertString(String[] expression, int length){
         int index = 0; //address of the source array
         int resultIndex=0; //address of the result carrier
         int stackCounter=0; //stack counter
-        //TODO: Change stop to endLoop and into a boolean
         int stop =0;
         String[] stack = new String[length];
         stack[0]="0"; //initialize stack
@@ -170,7 +169,7 @@ public class Function {
         return result;
     }
 
-    public static double resolveExpressionlv2(String[] expression, int length, int deg){
+    public static double resolveMathamaticalExpression(String[] expression, int length, int deg){
 
         if (expression.length == 1) return Double.parseDouble(expression[0]);
 
@@ -187,7 +186,7 @@ public class Function {
 
 
         //convert the string
-        expression= Function.convertToRPNlv2(expression, length);
+        expression= Function.convertString(expression, length);
 
 
     //solves the problem of unnecessary brackets in the case of a single number
@@ -232,7 +231,7 @@ public class Function {
                 }
             }
             if(expression[i]=="!"){ //if the operator is a factorial
-                result= uk.aston.calculusldc.root.InteractiveDiagrams.GammaFunction.factorial(Double.parseDouble(expression[i-1]));
+                result= factorial(Double.parseDouble(expression[i-1]));
                 expression[i]=result+"";
                 for(int a=i-2;a>=0;a--){
                     expression[a+1]=expression[a];
@@ -327,14 +326,14 @@ public class Function {
                 }
             }
             if(expression[i]=="erf"){ //if the operator is an error function
-                result= uk.aston.calculusldc.root.InteractiveDiagrams.ErrorFunction.erf((Double.parseDouble(expression[i-1])));
+                result= errorFunc((Double.parseDouble(expression[i-1])));
                 expression[i]=result+"";
                 for(int a=i-2;a>=0;a--){
                     expression[a+1]=expression[a];
                 }
             }
             if(expression[i]=="inverf"){ //if the operator is an inverse function
-                result= uk.aston.calculusldc.root.InteractiveDiagrams.ErrorFunction.invErf((Double.parseDouble(expression[i-1])));
+                result= invErrorFunc((Double.parseDouble(expression[i-1])));
                 expression[i]=result+"";
                 for(int a=i-2;a>=0;a--){
                     expression[a+1]=expression[a];
@@ -383,11 +382,11 @@ public class Function {
         return result;
     }
 
-    public static String[] replaceX(double valueOfX, String[] espressione, int length){
+    public static String[] replaceX(double valueOfX, String[] expression, int length){
 
         String[] newEspressione = new String[length];
         for(int i=0;i<length;i++){
-            newEspressione[i]=espressione[i];
+            newEspressione[i]=expression[i];
         }
 
         for(int i=0; i<length; i++){
@@ -400,12 +399,12 @@ public class Function {
         return newEspressione;
     }
 
-    public static String[] replaceConstants(double ans, String[] espressione, int length){
+    public static String[] replaceConstantsWithJavaCode(double ans, String[] expression, int length){
 
         String[] newExpression = new String[length];
 
         for(int i=0;i<length;i++){
-            newExpression[i]=espressione[i];
+            newExpression[i]=expression[i];
         }
 
         for(int i=0; i<length; i++){
@@ -425,16 +424,95 @@ public class Function {
         return newExpression;
     }
 
-    public static double[] createGraphicValues(int numberOfSamples, String[] espressione, int length, double minX, double maxX, int deg){
+    public static double[] createGraphicValues(int numberOfSamples, String[] expression, int length, double minX, double maxX, int deg)
+    {
         double step=(maxX-minX)/(numberOfSamples-1);
         double[] values = new double[numberOfSamples];
         String[] numericExpression;
 
-        for(int i=0;i<numberOfSamples;i++){
-            numericExpression= replaceX(minX+step*i,espressione,length);
-            values[i]=resolveExpressionlv2(numericExpression,length,deg);
+        for(int i=0;i<numberOfSamples;i++)
+        {
+            numericExpression= replaceX(minX+step*i,expression,length);
+            values[i]= resolveMathamaticalExpression(numericExpression,length,deg);
         }
         return values;
+    }
+
+    public static double errorFunc(double z){
+        if(Math.abs(z)>0.00005) {
+            return erorFunc1(z);
+        }
+        else{
+            return errorFunc2(z);
+        }
+    }
+
+    public static double erorFunc1(double z) {
+        double term = 1.0 / (1.0 + 0.5 * Math.abs(z));
+
+        // use Horner's method
+        double ans = 1 - term * Math.exp( -z*z   -   1.26551223 +
+                term * ( 1.00002368 +
+                        term * ( 0.37409196 +
+                                term * ( 0.09678418 +
+                                        term * (-0.18628806 +
+                                                term * ( 0.27886807 +
+                                                        term * (-1.13520398 +
+                                                                term * ( 1.48851587 +
+                                                                        term * (-0.82215223 +
+                                                                                term * ( 0.17087277))))))))));
+        if (z >= 0) return  ans;
+        else        return -ans;
+    }
+
+
+
+    public static double errorFunc2(double z) {
+        double term = 1.0 / (1.0 + 0.47047 * Math.abs(z));
+        double polynomial = term * (0.3480242 + term * (-0.0958798 + term * (0.7478556)));
+        double ans = 1.0 - polynomial * Math.exp(-z*z);
+        if (z >= 0) {
+            return  ans;
+        }
+        else{
+            return -ans;
+        }
+    }
+
+    public static double invErrorFunc(double x)
+    {
+        double tt1, tt2, lnx, sgn;
+        sgn = (x < 0) ? -1.0 : 1.0;
+
+        x = (1 - x)*(1 + x);        // x = 1 - x*x;
+        lnx = Math.log(x);
+
+        tt1 = 2/(Math.PI *0.147) + 0.5f * lnx;
+        tt2 = 1/(0.147) * lnx;
+
+        return(sgn*Math.sqrt(-tt1 + Math.sqrt(tt1*tt1 - tt2)));
+    }
+
+    public static double gamma(double x)
+    {
+        double[] p = {0.99999999999980993, 676.5203681218851, -1259.1392167224028,
+                771.32342877765313, -176.61502916214059, 12.507343278686905,
+                -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7};
+        int g = 7;
+        if(x < 0.5) return Math.PI / (Math.sin(Math.PI * x)* gamma(1-x));
+
+        x -= 1;
+        double a = p[0];
+        double t = x+g+0.5;
+        for(int i = 1; i < p.length; i++){
+            a += p[i]/(x+i);
+        }
+
+        return Math.sqrt(2*Math.PI)*Math.pow(t, x+0.5)*Math.exp(-t)*a;
+    }
+
+    public static double factorial(double x){
+        return gamma(x+1);
     }
 
 }

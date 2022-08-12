@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation_quizes"
-    app:startDestination="@id/searchFragment2">
+    app:startDestination="@id/savedFragment2">
 
-    <fragment
-        android:id="@+id/searchFragment2"
-        android:name="uk.aston.calculusldc.root.differentiation.SearchFragment"
-        android:label="SearchFragment"
-        tools:layout="@layout/fragment_search"
+    <activity
+        android:id="@+id/interactiveDiagramCalculatorActivity2"
+        android:name="uk.aston.calculusldc.root.InteractiveDiagrams.InteractiveDiagramCalculatorActivity"
+        android:label="InteractiveDiagramCalculatorActivity2"
+        tools:layout="@layout/activity_calculator"
         />
+
     <fragment
         android:id="@+id/savedFragment2"
         android:name="uk.aston.calculusldc.root.differentiation.SavedFragment"
