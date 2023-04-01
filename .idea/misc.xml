@@ -88,6 +88,7 @@
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layout-land/activity_graph_main.xml" value="0.1" />
+        <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layout/activity_calculator.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layout/activity_chainrulevideo.xml" value="0.2921875" />
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layout/activity_graph_main.xml" value="0.33" />
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layout/activity_graph_main_land.xml" value="0.27708333333333335" />
@@ -120,7 +121,7 @@
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layouts/chain_rule/layout/recyclerview_item.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layouts/product_rule/drawable/ic_baseline_calculate_24.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/layouts/product_rule/drawable/ic_baseline_info_24.xml" value="0.3828125" />
-        <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/menu/bottom_nav_menu.xml" value="0.16" />
+        <entry key="..\:/Users/44784/Documents/Third Year/CS3010 Individual Final Project/App/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
